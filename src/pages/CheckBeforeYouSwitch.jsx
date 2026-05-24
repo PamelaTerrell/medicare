@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 const WORDS_TO_CHECK = [
@@ -162,7 +162,7 @@ function getReviewLevel(count, osintCount, siteVerification) {
     return {
       label: "Do not enter personal information",
       description:
-        "Google flagged this website in the safety list checked. Do not enter personal information on that site. Verify through Medicare.gov, SHIP, or official plan documents instead.",
+        "Google flagged this website in Google’s website safety list. Do not enter personal information on that site. Verify through Medicare.gov, SHIP, or official plan documents instead.",
     };
   }
 
@@ -443,7 +443,6 @@ export default function CheckBeforeYouSwitch() {
         sourceType,
         companyName,
         website,
-        phone,
         contactedFirst,
         asksPersonalInfo,
         saysGovernment,
@@ -453,7 +452,6 @@ export default function CheckBeforeYouSwitch() {
       sourceType,
       companyName,
       website,
-      phone,
       contactedFirst,
       asksPersonalInfo,
       saysGovernment,
