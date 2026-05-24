@@ -107,7 +107,7 @@ async function checkSafeBrowsing(url) {
       checked: false,
       status: "not_configured",
       message:
-        "The Google website safety check is not connected yet. This website was not checked against Google’s safety list.",
+        "The Google website safety check is not connected yet. This website was not checked against Google’s website safety list.",
     };
   }
 
@@ -153,7 +153,7 @@ async function checkSafeBrowsing(url) {
       checked: true,
       status: "unsafe_match_found",
       message:
-        "Google flagged this website in the safety list checked. Do not enter personal information on this site. Use Medicare.gov, SHIP, or official plan documents instead.",
+        "Google flagged this website in Google’s website safety list. Do not enter personal information on this site. Use Medicare.gov, SHIP, or official plan documents instead.",
       matches: data.matches,
     };
   }
@@ -162,7 +162,7 @@ async function checkSafeBrowsing(url) {
     checked: true,
     status: "no_match_found",
     message:
-      "Google did not flag this website in the safety list checked. This does not guarantee the website is safe.",
+      "Google did not flag this website in Google’s website safety list. This does not guarantee the website is safe.",
   };
 }
 
