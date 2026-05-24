@@ -155,8 +155,16 @@ function findWordsToCheck(text) {
   }).filter((item) => item.matched);
 }
 
-function getReviewLevel(count, osintCount) {
+function getReviewLevel(count, osintCount, siteVerification) {
   const total = count + osintCount;
+
+  if (siteVerification?.safeBrowsing?.status === "unsafe_match_found") {
+    return {
+      label: "Do not enter personal information",
+      description:
+        "The website matched an unsafe-site list. Do not enter personal information on that site. Verify through Medicare.gov, SHIP, or the official plan documents instead.",
+    };
+  }
 
   if (total >= 7) {
     return {
@@ -288,7 +296,7 @@ function analyzePhone(phone) {
   return results;
 }
 
-function analyzeSource({ sourceType, companyName, website, phone, contactedFirst, asksPersonalInfo, saysGovernment, hasDisclaimer }) {
+function analyzeSource({ sourceType, companyName, website, contactedFirst, asksPersonalInfo, saysGovernment, hasDisclaimer }) {
   const results = [];
 
   if (sourceType === "Phone call" || sourceType === "Text message") {
@@ -403,6 +411,10 @@ export default function CheckBeforeYouSwitch() {
   const [saysGovernment, setSaysGovernment] = useState("not-sure");
   const [hasDisclaimer, setHasDisclaimer] = useState("not-sure");
 
+  const [siteVerification, setSiteVerification] = useState(null);
+  const [siteChecking, setSiteChecking] = useState(false);
+  const [siteCheckError, setSiteCheckError] = useState("");
+
   const wordMatches = useMemo(() => findWordsToCheck(input), [input]);
   const websiteFindings = useMemo(() => analyzeWebsite(website), [website]);
   const phoneFindings = useMemo(() => analyzePhone(phone), [phone]);
@@ -425,8 +437,8 @@ export default function CheckBeforeYouSwitch() {
   const osintFindings = [...websiteFindings, ...phoneFindings, ...sourceFindings];
 
   const review = useMemo(
-    () => getReviewLevel(wordMatches.length, osintFindings.length),
-    [wordMatches.length, osintFindings.length]
+    () => getReviewLevel(wordMatches.length, osintFindings.length, siteVerification),
+    [wordMatches.length, osintFindings.length, siteVerification]
   );
 
   const hasAnyInput =
@@ -438,7 +450,8 @@ export default function CheckBeforeYouSwitch() {
     contactedFirst !== "not-sure" ||
     asksPersonalInfo !== "not-sure" ||
     saysGovernment !== "not-sure" ||
-    hasDisclaimer !== "not-sure";
+    hasDisclaimer !== "not-sure" ||
+    siteVerification;
 
   const allQuestions = useMemo(() => {
     const questions = wordMatches.flatMap((match) => match.questions);
@@ -458,13 +471,53 @@ export default function CheckBeforeYouSwitch() {
       questions.push("Does the company name match the website, mailer, phone number, and official plan documents?");
     }
 
+    if (siteVerification?.safeBrowsing?.status === "unsafe_match_found") {
+      questions.push("Should I avoid this website and verify through Medicare.gov or SHIP instead?");
+    }
+
     return [...new Set(questions)];
-  }, [wordMatches, website, phone, companyName]);
+  }, [wordMatches, website, phone, companyName, siteVerification]);
 
   const officialLinks = useMemo(
     () => buildOfficialSearchLinks(companyName, website, phone),
     [companyName, website, phone]
   );
+
+  async function handleVerifyWebsite() {
+    setSiteCheckError("");
+    setSiteVerification(null);
+
+    if (!website.trim()) {
+      setSiteCheckError("Enter a website first.");
+      return;
+    }
+
+    try {
+      setSiteChecking(true);
+
+      const response = await fetch("/api/verify-site", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ website }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.error || "Website check failed.");
+      }
+
+      setSiteVerification(data);
+    } catch (error) {
+      setSiteCheckError(
+        "The website check could not be completed. You can still review the message and use the public links below."
+      );
+    } finally {
+      setSiteChecking(false);
+    }
+  }
 
   function handlePrint() {
     window.print();
@@ -480,6 +533,9 @@ export default function CheckBeforeYouSwitch() {
     setAsksPersonalInfo("not-sure");
     setSaysGovernment("not-sure");
     setHasDisclaimer("not-sure");
+    setSiteVerification(null);
+    setSiteChecking(false);
+    setSiteCheckError("");
   }
 
   return (
@@ -604,12 +660,38 @@ export default function CheckBeforeYouSwitch() {
                 <span className="text-sm font-bold text-[#16324f]">
                   Website shown
                 </span>
+
                 <input
                   value={website}
-                  onChange={(event) => setWebsite(event.target.value)}
+                  onChange={(event) => {
+                    setWebsite(event.target.value);
+                    setSiteVerification(null);
+                    setSiteCheckError("");
+                  }}
                   className="mt-2 w-full rounded-2xl border border-[#cfe0ee] bg-[#f8fbff] px-4 py-3 text-[#1f2937] outline-none focus:border-[#2563eb] focus:ring-4 focus:ring-[#dbeafe]"
                   placeholder="Example: benefits-example.com"
                 />
+
+                <button
+                  type="button"
+                  onClick={handleVerifyWebsite}
+                  disabled={siteChecking}
+                  className="mt-3 rounded-full bg-[#16324f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0f253a] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {siteChecking ? "Checking website..." : "Check Website"}
+                </button>
+
+                {siteCheckError && (
+                  <p className="mt-3 text-sm font-semibold text-[#9f1239]">
+                    {siteCheckError}
+                  </p>
+                )}
+
+                {siteVerification && (
+                  <p className="mt-3 text-sm font-semibold text-[#0f766e]">
+                    Website check complete. See the Website verification section below.
+                  </p>
+                )}
               </label>
 
               <label className="block">
@@ -758,7 +840,7 @@ export default function CheckBeforeYouSwitch() {
             </div>
           )}
 
-          {hasAnyInput && wordMatches.length === 0 && osintFindings.length === 0 && (
+          {hasAnyInput && wordMatches.length === 0 && osintFindings.length === 0 && !siteVerification && (
             <div className="py-10">
               <div className="rounded-2xl border border-[#bbf7d0] bg-[#f0fdf4] p-5">
                 <h3 className="font-bold text-[#14532d]">
@@ -832,6 +914,73 @@ export default function CheckBeforeYouSwitch() {
                   </article>
                 ))}
               </div>
+            </div>
+          )}
+
+          {siteVerification && (
+            <div className="border-t border-[#d6e3ee] py-8">
+              <h3 className="text-2xl font-bold text-[#16324f]">
+                Website verification
+              </h3>
+
+              <div className="mt-5 rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                  Website checked
+                </p>
+
+                <p className="mt-2 text-lg font-bold text-[#16324f]">
+                  {siteVerification.website?.domain || "Website entered"}
+                </p>
+
+                <p className="mt-2 break-words text-sm leading-6 text-[#526b80]">
+                  {siteVerification.website?.normalizedUrl}
+                </p>
+              </div>
+
+              <div className="mt-5 grid gap-5 md:grid-cols-2">
+                {siteVerification.simpleFindings?.map((finding, index) => (
+                  <article
+                    key={`${finding.title}-${index}`}
+                    className="rounded-2xl border border-[#d6e3ee] bg-white p-5 shadow-sm"
+                  >
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                      {finding.level}
+                    </p>
+
+                    <h4 className="mt-2 text-lg font-bold text-[#16324f]">
+                      {finding.title}
+                    </h4>
+
+                    <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                      {finding.message}
+                    </p>
+                  </article>
+                ))}
+
+                <article
+                  className={`rounded-2xl border p-5 shadow-sm ${
+                    siteVerification.safeBrowsing?.status === "unsafe_match_found"
+                      ? "border-[#fecdd3] bg-[#fff1f2]"
+                      : "border-[#d6e3ee] bg-white"
+                  }`}
+                >
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                    Safety list check
+                  </p>
+
+                  <h4 className="mt-2 text-lg font-bold text-[#16324f]">
+                    Google Safe Browsing
+                  </h4>
+
+                  <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                    {siteVerification.safeBrowsing?.message}
+                  </p>
+                </article>
+              </div>
+
+              <p className="mt-5 text-sm leading-6 text-[#526b80]">
+                {siteVerification.reminder}
+              </p>
             </div>
           )}
         </div>
