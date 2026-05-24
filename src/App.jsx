@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import CheckBeforeYouSwitch from "./pages/CheckBeforeYouSwitch.jsx";
 
 const questions = [
   "Are my doctors, specialists, hospitals, and medications covered?",
@@ -20,7 +22,7 @@ const topics = [
   },
   {
     title: "Retiree Benefits Warning",
-    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, or military benefits could be affected.",
+    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, military, or other benefits could be affected.",
   },
   {
     title: "Helpful Extras vs. Real Tradeoffs",
@@ -28,7 +30,7 @@ const topics = [
   },
 ];
 
-export default function App() {
+function Home() {
   return (
     <main className="min-h-screen bg-[#f5f9fc] text-[#1f2937]">
       {/* Top notice */}
@@ -38,16 +40,19 @@ export default function App() {
 
       {/* Header */}
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <a href="/" className="tracking-tight">
+        <Link to="/" className="tracking-tight">
           <span className="block text-xl font-bold text-[#16324f]">
             Medicare Before You Switch
           </span>
           <span className="mt-1 block text-xs font-medium uppercase tracking-[0.18em] text-[#64748b]">
             A Stabile USA educational resource
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 text-sm font-medium text-[#526b80] md:flex">
+          <Link to="/check-before-you-switch" className="hover:text-[#16324f]">
+            Check Before You Switch
+          </Link>
           <a href="#why" className="hover:text-[#16324f]">
             Why It Matters
           </a>
@@ -89,12 +94,12 @@ export default function App() {
               See Questions to Ask First
             </a>
 
-            <a
-              href="#topics"
+            <Link
+              to="/check-before-you-switch"
               className="rounded-full border border-[#93c5fd] bg-white px-7 py-4 text-center text-sm font-semibold text-[#1d4ed8] transition hover:bg-[#eff6ff]"
             >
-              Learn What the Ads Leave Out
-            </a>
+              Check an Ad or Message
+            </Link>
           </div>
         </div>
 
@@ -127,6 +132,36 @@ export default function App() {
               provider networks, plan rules, prior authorization, and different costs.
               Always compare the full plan — not just the advertised allowance.
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Check Before You Switch CTA */}
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#bfdbfe] bg-white p-8 shadow-xl shadow-[#16324f]/5 md:p-10">
+          <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-[#dbeafe]" />
+
+          <div className="relative max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+              Simple tool
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+              Check a Medicare ad or message before you trust it.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-[#526b80]">
+              Paste the words from a Medicare ad, mailer, text message, email, or phone script.
+              This tool can help you notice words that may need a closer look before you change
+              your coverage.
+            </p>
+
+            <Link
+              to="/check-before-you-switch"
+              className="mt-7 inline-flex rounded-full bg-[#2563eb] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8]"
+            >
+              Check Before You Switch
+            </Link>
           </div>
         </div>
       </section>
@@ -383,5 +418,17 @@ export default function App() {
         </p>
       </footer>
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/check-before-you-switch"
+        element={<CheckBeforeYouSwitch />}
+      />
+    </Routes>
   );
 }
