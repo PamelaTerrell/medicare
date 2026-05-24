@@ -1,3 +1,5 @@
+import process from "node:process";
+
 function normalizeUrl(value) {
   const trimmed = String(value || "").trim();
 
@@ -199,10 +201,10 @@ export default async function handler(req, res) {
       reminder:
         "This tool provides public-information checks only. It does not prove whether a company, plan, ad, or website is good or bad.",
     });
-  } catch (error) {
-    return res.status(500).json({
-      ok: false,
-      error: "Verification failed.",
-    });
-  }
+  } catch {
+  return res.status(500).json({
+    ok: false,
+    error: "Verification failed.",
+  });
+}
 }

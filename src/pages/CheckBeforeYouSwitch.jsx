@@ -535,11 +535,11 @@ export default function CheckBeforeYouSwitch() {
       }
 
       setSiteVerification(data);
-    } catch (error) {
-      setSiteCheckError(
-        "The website check could not be completed. You can still review the message and use the public links below."
-      );
-    } finally {
+    } catch {
+  setSiteCheckError(
+    "The website check could not be completed. You can still review the message and use the public links below."
+  );
+} finally {
       setSiteChecking(false);
     }
   }
