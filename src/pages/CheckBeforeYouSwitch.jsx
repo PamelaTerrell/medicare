@@ -162,7 +162,7 @@ function getReviewLevel(count, osintCount, siteVerification) {
     return {
       label: "Do not enter personal information",
       description:
-        "The website matched an unsafe-site list. Do not enter personal information on that site. Verify through Medicare.gov, SHIP, or the official plan documents instead.",
+        "Google flagged this website in the safety list checked. Do not enter personal information on that site. Verify through Medicare.gov, SHIP, or official plan documents instead.",
     };
   }
 
@@ -241,8 +241,8 @@ function analyzeWebsite(url) {
 
   if (domain.includes("medicare") && !domain.endsWith("medicare.gov")) {
     results.push({
-      title: "Medicare-looking website",
-      text: "This website uses the word Medicare but does not appear to be Medicare.gov. Check who owns the site before trusting it.",
+      title: "Website uses the word Medicare",
+      text: "This website uses Medicare-related wording but does not appear to be Medicare.gov. Check who owns the site before trusting it.",
     });
   }
 
@@ -260,8 +260,18 @@ function analyzeWebsite(url) {
     });
   }
 
-  const suspiciousTerms = ["benefit", "benefits", "giveback", "allowance", "senior", "seniors", "card", "free"];
-  const termMatches = suspiciousTerms.filter((term) => domain.includes(term));
+  const benefitTerms = [
+    "benefit",
+    "benefits",
+    "giveback",
+    "allowance",
+    "senior",
+    "seniors",
+    "card",
+    "free",
+  ];
+
+  const termMatches = benefitTerms.filter((term) => domain.includes(term));
 
   if (termMatches.length > 0) {
     results.push({
@@ -296,7 +306,15 @@ function analyzePhone(phone) {
   return results;
 }
 
-function analyzeSource({ sourceType, companyName, website, contactedFirst, asksPersonalInfo, saysGovernment, hasDisclaimer }) {
+function analyzeSource({
+  sourceType,
+  companyName,
+  website,
+  contactedFirst,
+  asksPersonalInfo,
+  saysGovernment,
+  hasDisclaimer,
+}) {
   const results = [];
 
   if (sourceType === "Phone call" || sourceType === "Text message") {
@@ -431,7 +449,16 @@ export default function CheckBeforeYouSwitch() {
         saysGovernment,
         hasDisclaimer,
       }),
-    [sourceType, companyName, website, phone, contactedFirst, asksPersonalInfo, saysGovernment, hasDisclaimer]
+    [
+      sourceType,
+      companyName,
+      website,
+      phone,
+      contactedFirst,
+      asksPersonalInfo,
+      saysGovernment,
+      hasDisclaimer,
+    ]
   );
 
   const osintFindings = [...websiteFindings, ...phoneFindings, ...sourceFindings];
@@ -965,11 +992,11 @@ export default function CheckBeforeYouSwitch() {
                   }`}
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-                    Safety list check
+                    Website safety check
                   </p>
 
                   <h4 className="mt-2 text-lg font-bold text-[#16324f]">
-                    Google Safe Browsing
+                    Google website safety check
                   </h4>
 
                   <p className="mt-2 text-sm leading-6 text-[#526b80]">

@@ -44,7 +44,11 @@ function getSimpleWebsiteChecks(inputUrl) {
     });
   }
 
-  if (domain.includes("medicare") && domain !== "medicare.gov" && !domain.endsWith(".medicare.gov")) {
+  if (
+    domain.includes("medicare") &&
+    domain !== "medicare.gov" &&
+    !domain.endsWith(".medicare.gov")
+  ) {
     findings.push({
       level: "review",
       title: "Website uses the word Medicare",
@@ -103,7 +107,7 @@ async function checkSafeBrowsing(url) {
       checked: false,
       status: "not_configured",
       message:
-        "Google Safe Browsing is not connected yet. The site was not checked against Google’s unsafe-site lists.",
+        "The Google website safety check is not connected yet. This website was not checked against Google’s safety list.",
     };
   }
 
@@ -138,7 +142,7 @@ async function checkSafeBrowsing(url) {
       checked: false,
       status: "error",
       message:
-        "The website safety check could not be completed right now. Try again later or verify the website another way.",
+        "The website safety check could not be completed right now. Try again later, or verify the website through Medicare.gov, SHIP, or the official plan documents.",
     };
   }
 
@@ -149,7 +153,7 @@ async function checkSafeBrowsing(url) {
       checked: true,
       status: "unsafe_match_found",
       message:
-        "This website matched a public unsafe-site list. Do not enter personal information on this site.",
+        "Google flagged this website in the safety list checked. Do not enter personal information on this site. Use Medicare.gov, SHIP, or official plan documents instead.",
       matches: data.matches,
     };
   }
@@ -158,7 +162,7 @@ async function checkSafeBrowsing(url) {
     checked: true,
     status: "no_match_found",
     message:
-      "This website was not found on the unsafe-site list checked. This does not guarantee the website is safe.",
+      "Google did not flag this website in the safety list checked. This does not guarantee the website is safe.",
   };
 }
 
