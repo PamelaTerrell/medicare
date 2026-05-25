@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import CheckBeforeYouSwitch from "./pages/CheckBeforeYouSwitch.jsx";
 import SeniorGiveBackAllowance from "./pages/SeniorGiveBackAllowance.jsx";
 import OriginalMedicareVsMedicareAdvantage from "./pages/OriginalMedicareVsMedicareAdvantage.jsx";
+import HelpfulExtrasVsRealTradeoffs from "./pages/HelpfulExtrasVsRealTradeoffs.jsx";
 
 const questions = [
   "Are my doctors, specialists, hospitals, and medications covered?",
@@ -24,12 +25,13 @@ const topics = [
     href: "/senior-give-back-allowance",
   },
   {
-    title: "Retiree Benefits Warning",
-    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, military, or other benefits could be affected.",
-  },
-  {
     title: "Helpful Extras vs. Real Tradeoffs",
     text: "Dental, vision, hearing, transportation, OTC, and other benefits may help — but they should be weighed against networks, authorizations, and plan rules.",
+    href: "/helpful-extras-vs-real-tradeoffs",
+  },
+  {
+    title: "Retiree Benefits Warning",
+    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, military, or other benefits could be affected.",
   },
 ];
 
@@ -445,6 +447,10 @@ export default function App() {
       <Route
         path="/original-medicare-vs-medicare-advantage"
         element={<OriginalMedicareVsMedicareAdvantage />}
+      />
+      <Route
+        path="/helpful-extras-vs-real-tradeoffs"
+        element={<HelpfulExtrasVsRealTradeoffs />}
       />
     </Routes>
   );
