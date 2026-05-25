@@ -3,6 +3,7 @@ import CheckBeforeYouSwitch from "./pages/CheckBeforeYouSwitch.jsx";
 import SeniorGiveBackAllowance from "./pages/SeniorGiveBackAllowance.jsx";
 import OriginalMedicareVsMedicareAdvantage from "./pages/OriginalMedicareVsMedicareAdvantage.jsx";
 import HelpfulExtrasVsRealTradeoffs from "./pages/HelpfulExtrasVsRealTradeoffs.jsx";
+import RetireeBenefitsWarning from "./pages/RetireeBenefitsWarning.jsx";
 
 const questions = [
   "Are my doctors, specialists, hospitals, and medications covered?",
@@ -31,7 +32,8 @@ const topics = [
   },
   {
     title: "Retiree Benefits Warning",
-    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, military, or other benefits could be affected.",
+    text: "Before switching plans, seniors should confirm whether existing retiree, union, employer, military, spouse, dependent, drug, or supplemental benefits could be affected.",
+    href: "/retiree-benefits-warning",
   },
 ];
 
@@ -294,18 +296,12 @@ function Home() {
                   {topic.text}
                 </p>
 
-                {topic.href ? (
-                  <Link
-                    to={topic.href}
-                    className="mt-6 inline-flex text-sm font-semibold text-[#2563eb] hover:underline"
-                  >
-                    Read this guide →
-                  </Link>
-                ) : (
-                  <span className="mt-6 inline-flex text-sm font-semibold text-[#64748b]">
-                    Coming soon →
-                  </span>
-                )}
+                <Link
+                  to={topic.href}
+                  className="mt-6 inline-flex text-sm font-semibold text-[#2563eb] hover:underline"
+                >
+                  Read this guide →
+                </Link>
               </article>
             ))}
           </div>
@@ -451,6 +447,10 @@ export default function App() {
       <Route
         path="/helpful-extras-vs-real-tradeoffs"
         element={<HelpfulExtrasVsRealTradeoffs />}
+      />
+      <Route
+        path="/retiree-benefits-warning"
+        element={<RetireeBenefitsWarning />}
       />
     </Routes>
   );
