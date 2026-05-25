@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import CheckBeforeYouSwitch from "./pages/CheckBeforeYouSwitch.jsx";
+import SeniorGiveBackAllowance from "./pages/SeniorGiveBackAllowance.jsx";
 
 const questions = [
   "Are my doctors, specialists, hospitals, and medications covered?",
@@ -14,6 +15,7 @@ const topics = [
   {
     title: "Senior Give Back Allowances",
     text: "Understand what these advertised allowances may actually be, who may qualify, and why they should not be treated like free government cash.",
+    href: "/senior-give-back-allowance",
   },
   {
     title: "Original Medicare vs. Medicare Advantage",
@@ -288,12 +290,18 @@ function Home() {
                   {topic.text}
                 </p>
 
-                <a
-                  href="#"
-                  className="mt-6 inline-flex text-sm font-semibold text-[#2563eb] hover:underline"
-                >
-                  Coming soon →
-                </a>
+                {topic.href ? (
+                  <Link
+                    to={topic.href}
+                    className="mt-6 inline-flex text-sm font-semibold text-[#2563eb] hover:underline"
+                  >
+                    Read this guide →
+                  </Link>
+                ) : (
+                  <span className="mt-6 inline-flex text-sm font-semibold text-[#64748b]">
+                    Coming soon →
+                  </span>
+                )}
               </article>
             ))}
           </div>
@@ -427,6 +435,10 @@ export default function App() {
       <Route
         path="/check-before-you-switch"
         element={<CheckBeforeYouSwitch />}
+      />
+      <Route
+        path="/senior-give-back-allowance"
+        element={<SeniorGiveBackAllowance />}
       />
     </Routes>
   );
