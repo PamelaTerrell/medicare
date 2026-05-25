@@ -13,21 +13,15 @@ const questions = [
 ];
 
 const topics = [
-
   {
-  title: "Original Medicare vs. Medicare Advantage",
-  text: "Learn the difference between receiving benefits through Original Medicare and receiving them through a private Medicare Advantage plan.",
-  href: "/original-medicare-vs-medicare-advantage",
-},
-
+    title: "Original Medicare vs. Medicare Advantage",
+    text: "Learn the difference between receiving benefits through Original Medicare and receiving them through a private Medicare Advantage plan.",
+    href: "/original-medicare-vs-medicare-advantage",
+  },
   {
     title: "Senior Give Back Allowances",
     text: "Understand what these advertised allowances may actually be, who may qualify, and why they should not be treated like free government cash.",
     href: "/senior-give-back-allowance",
-  },
-  {
-    title: "Original Medicare vs. Medicare Advantage",
-    text: "Learn the difference between receiving benefits through Original Medicare and receiving them through a private Medicare Advantage plan.",
   },
   {
     title: "Retiree Benefits Warning",
@@ -448,11 +442,10 @@ export default function App() {
         path="/senior-give-back-allowance"
         element={<SeniorGiveBackAllowance />}
       />
-
       <Route
-  path="/original-medicare-vs-medicare-advantage"
-  element={<OriginalMedicareVsMedicareAdvantage />}
-/>
+        path="/original-medicare-vs-medicare-advantage"
+        element={<OriginalMedicareVsMedicareAdvantage />}
+      />
     </Routes>
   );
 }
