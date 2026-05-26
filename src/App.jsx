@@ -341,6 +341,250 @@ function Home() {
   </div>
 </section>
 
+{/* Before You Switch Guide */}
+<section className="bg-[#f5f9fc]">
+  <div className="mx-auto max-w-7xl px-6 py-20">
+    <div className="max-w-3xl">
+      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+        Before you switch
+      </p>
+
+      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+        Medicare Advantage may help some people — but the full decision matters.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-[#526b80]">
+        A Medicare Advantage plan is not automatically bad. Some people like their plan,
+        their doctors are in network, their prescriptions are covered, and the extra benefits
+        are useful. The concern is switching because of an advertisement without understanding
+        the costs, rules, networks, and possible tradeoffs.
+      </p>
+    </div>
+
+    <div className="mt-10 grid gap-6 lg:grid-cols-2">
+      <article className="rounded-[2rem] border border-[#bfdbfe] bg-white p-7 shadow-xl shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          Do not enroll until you verify
+        </p>
+
+        <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
+          Check the care you actually use.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          Before changing Medicare coverage, write these details down and compare them
+          against the exact plan documents — not just the commercial or phone script.
+        </p>
+
+        <ul className="mt-6 grid gap-3 text-sm leading-6 text-[#35556f] sm:grid-cols-2">
+          {[
+            "Current doctors and specialists",
+            "Preferred hospital",
+            "Current prescriptions and dosages",
+            "Preferred pharmacy",
+            "Retiree, union, employer, military, or spouse benefits",
+            "Current monthly premium",
+            "Current deductible",
+            "Expected copays or coinsurance",
+            "Maximum out-of-pocket cost",
+            "Travel or out-of-area care needs",
+            "Prior authorization rules",
+            "Referral requirements",
+          ].map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2563eb] bg-[#eef7ff] text-xs text-[#2563eb]">
+                ✓
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      <article className="rounded-[2rem] border border-[#fecdd3] bg-[#fff1f2] p-7 shadow-xl shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+          Medigap caution
+        </p>
+
+        <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#881337]">
+          Leaving Original Medicare with Medigap can be a serious decision.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#7f1d1d]">
+          If someone currently has Original Medicare with a Medigap policy, they should
+          ask whether they can get that Medigap policy back later if they switch to Medicare
+          Advantage and change their mind.
+        </p>
+
+        <div className="mt-6 rounded-2xl border border-[#fecdd3] bg-white p-5">
+          <p className="text-sm font-bold text-[#881337]">
+            Important question:
+          </p>
+
+          <p className="mt-2 text-sm leading-6 text-[#7f1d1d]">
+            “If I leave this Medigap policy, will I have guaranteed rights to buy a Medigap
+            policy later, or could I have to answer health questions and go through medical
+            underwriting?”
+          </p>
+        </div>
+
+        <p className="mt-5 text-sm leading-6 text-[#7f1d1d]">
+          Rules can depend on timing, state protections, and the person’s situation. This is
+          one reason seniors should verify before switching.
+        </p>
+      </article>
+    </div>
+
+    <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          Who to contact first
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          Do not rely only on the ad.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          Before switching, compare the offer with official or direct sources.
+        </p>
+
+        <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
+          <li>• Medicare.gov</li>
+          <li>• 1-800-MEDICARE</li>
+          <li>• The plan’s official documents</li>
+          <li>• Your current doctors</li>
+          <li>• Your preferred hospital</li>
+          <li>• Your pharmacy</li>
+          <li>• Your retiree, union, or employer benefits office</li>
+          <li>• VA or TRICARE, if applicable</li>
+          <li>• SHIP for local Medicare counseling</li>
+        </ul>
+      </article>
+
+      <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
+          Dual Eligible
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          Some people have both Medicare and Medicaid.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          People who have both Medicare and full Medicaid coverage are often called
+          “dually eligible.” Medicare generally pays first for Medicare-covered services,
+          and Medicaid pays after Medicare and any other insurance.
+        </p>
+
+        <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
+          <p className="text-sm font-bold text-[#16324f]">
+            Why this matters:
+          </p>
+
+          <p className="mt-2 text-sm leading-6 text-[#526b80]">
+            Dual eligibility can affect costs, plan choices, Special Needs Plans, extra help,
+            and whether certain advertised benefits apply.
+          </p>
+        </div>
+      </article>
+
+      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          Red flag phrases
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          These words deserve a closer look.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          These phrases are not automatically scams, but they are reasons to slow down and verify.
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {[
+            "You may qualify",
+            "Call now",
+            "Free money",
+            "Government benefit",
+            "Get money back",
+            "Use it for groceries",
+            "You are missing out",
+            "Give us your Medicare number",
+            "No cost to you",
+            "Limited time",
+            "Pre-approved",
+            "Senior allowance",
+          ].map((phrase) => (
+            <span
+              key={phrase}
+              className="rounded-full border border-[#cfe0ee] bg-[#f8fbff] px-3 py-2 text-xs font-semibold text-[#35556f]"
+            >
+              {phrase}
+            </span>
+          ))}
+        </div>
+      </article>
+    </div>
+
+    <div className="mt-6 rounded-[2rem] border border-[#d6e3ee] bg-white p-7 shadow-xl shadow-[#16324f]/5">
+      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+            Medicare vs. Medicaid reminder
+          </p>
+
+          <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
+            Similar names, different programs.
+          </h3>
+
+          <p className="mt-4 leading-7 text-[#526b80]">
+            Medicare and Medicaid can work together for some people, but they are not the
+            same program. That is why eligibility words in advertisements should be checked
+            carefully.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-[#bfdbfe] bg-[#eef7ff] p-5">
+            <p className="font-bold text-[#16324f]">Medicare</p>
+            <p className="mt-2 text-sm leading-6 text-[#526b80]">
+              Federal health insurance mainly for people 65 or older, and for some younger
+              people with disabilities, End-Stage Renal Disease, or ALS.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+            <p className="font-bold text-[#16324f]">Medicaid</p>
+            <p className="mt-2 text-sm leading-6 text-[#526b80]">
+              Health coverage for eligible people with limited income and resources. It is
+              administered by states under federal rules.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-6 rounded-[1.5rem] border border-[#fde68a] bg-[#fffbeb] p-6">
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
+        Bottom line
+      </p>
+
+      <h3 className="mt-3 text-2xl font-bold text-[#92400e]">
+        The benefit may be real, but the decision is bigger than the benefit.
+      </h3>
+
+      <p className="mt-3 max-w-4xl leading-7 text-[#92400e]">
+        Before switching coverage because of a grocery card, give-back allowance, dental
+        benefit, or $0 premium message, seniors should compare the full plan: doctors,
+        hospitals, prescriptions, prior authorization, referrals, out-of-pocket exposure,
+        retiree benefits, and whether Medicaid or dual eligibility affects their options.
+      </p>
+    </div>
+  </div>
+</section>
+
       {/* Example Comparison */}
 <section className="bg-white">
   <div className="mx-auto max-w-7xl px-6 py-20">
