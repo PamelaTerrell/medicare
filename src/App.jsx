@@ -223,6 +223,124 @@ function Home() {
         </div>
       </section>
 
+      {/* Medicare Basics */}
+<section className="bg-white">
+  <div className="mx-auto max-w-7xl px-6 py-20">
+    <div className="max-w-3xl">
+      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+        Medicare basics
+      </p>
+
+      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+        Before comparing plans, understand what Medicare and Medicaid mean.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-[#526b80]">
+        Many advertisements use words like Medicare, Medicaid, allowance, give-back,
+        and benefits in ways that can confuse people. These programs are related to
+        healthcare, but they are not the same thing.
+      </p>
+    </div>
+
+    <div className="mt-10 grid gap-6 lg:grid-cols-3">
+      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-[#f8fbff] p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          What is Medicare?
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          Medicare is health insurance mainly for people 65 or older.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          Medicare is a federal health insurance program. Most people become eligible
+          at age 65, but some people may qualify earlier because of a disability,
+          End-Stage Renal Disease, or ALS.
+        </p>
+
+        <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
+          <li>• Part A helps cover hospital care.</li>
+          <li>• Part B helps cover doctor and outpatient care.</li>
+          <li>• Part C is Medicare Advantage through private insurance companies.</li>
+          <li>• Part D helps cover prescription drugs.</li>
+        </ul>
+      </article>
+
+      <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
+          Current Part B cost
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          The standard Part B premium is $202.90 per month in 2026.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          Most people pay the standard Part B premium. In 2026, the standard monthly
+          Part B premium is $202.90, and the Part B deductible is $283 for the year.
+        </p>
+
+        <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
+          <p className="text-sm font-bold text-[#16324f]">
+            Important to remember:
+          </p>
+
+          <p className="mt-2 text-sm leading-6 text-[#526b80]">
+            A Medicare Advantage plan may advertise a $0 plan premium, but the person
+            usually still pays the Part B premium unless a specific give-back benefit
+            reduces part of it.
+          </p>
+        </div>
+      </article>
+
+      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          What is Medicaid?
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          Medicaid is different from Medicare.
+        </h3>
+
+        <p className="mt-4 leading-7 text-[#526b80]">
+          Medicaid provides health coverage for eligible people with limited income
+          and resources. It is administered by states according to federal requirements
+          and is funded jointly by states and the federal government.
+        </p>
+
+        <div className="mt-5 rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+          <p className="text-sm font-bold text-[#16324f]">
+            Why this matters:
+          </p>
+
+          <p className="mt-2 text-sm leading-6 text-[#526b80]">
+            Some people have both Medicare and Medicaid. Others have Medicare only.
+            Eligibility for Medicaid can affect which benefits, costs, and plan options
+            apply.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div className="mt-8 rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-7">
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+        Common confusion
+      </p>
+
+      <h3 className="mt-3 text-2xl font-bold text-[#881337]">
+        Medicare and Medicaid are not interchangeable.
+      </h3>
+
+      <p className="mt-4 max-w-4xl leading-7 text-[#7f1d1d]">
+        A Medicare ad may mention extra help, Medicaid, dual eligibility, grocery
+        cards, give-back benefits, or special needs plans. Those details can depend on
+        income, location, Medicaid status, health conditions, and the exact plan. Before
+        switching coverage, seniors should confirm what they personally qualify for.
+      </p>
+    </div>
+  </div>
+</section>
+
       {/* Example Comparison */}
 <section className="bg-white">
   <div className="mx-auto max-w-7xl px-6 py-20">
@@ -266,12 +384,12 @@ function Home() {
 
       {[
         {
-          item: "Monthly premium",
-          original:
-            "Most people pay $0 for Part A. Most people still pay the standard Part B premium. A separate Part D plan and/or Medigap policy may have additional premiums.",
-          advantage:
-            "Some plans advertise a $0 premium, but the person usually still pays the Part B premium. Some plans may reduce the Part B premium in certain counties.",
-        },
+  item: "Monthly premium",
+  original:
+    "Most people pay $0 for Part A if they or a spouse paid Medicare taxes long enough. Most people pay the standard Part B premium, which is $202.90 per month in 2026. A separate Part D plan and/or Medigap policy may have additional premiums.",
+  advantage:
+    "Some Medicare Advantage plans advertise a $0 plan premium, but the person usually still pays the Part B premium. Some plans may reduce part of the Part B premium in certain counties.",
+},
         {
           item: "Hospital deductible or hospital copays",
           original:
