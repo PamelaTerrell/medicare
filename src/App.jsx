@@ -223,6 +223,153 @@ function Home() {
         </div>
       </section>
 
+      {/* Example Comparison */}
+<section className="bg-white">
+  <div className="mx-auto max-w-7xl px-6 py-20">
+    <div className="max-w-3xl">
+      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+        Example comparison
+      </p>
+
+      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+        Do not compare only the advertised benefit. Compare the costs behind the plan.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-[#526b80]">
+        A grocery card, dental benefit, or give-back allowance may sound helpful.
+        But before switching Medicare coverage, seniors should also compare hospital
+        costs, doctor costs, drug coverage, network rules, prior authorization, and
+        maximum out-of-pocket exposure.
+      </p>
+    </div>
+
+    <div className="mt-10 overflow-hidden rounded-[2rem] border border-[#d6e3ee] bg-[#f8fbff] shadow-xl shadow-[#16324f]/5">
+      <div className="grid bg-[#16324f] text-white md:grid-cols-3">
+        <div className="p-5 md:col-span-1">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+            What to compare
+          </p>
+        </div>
+
+        <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+            Original Medicare example
+          </p>
+        </div>
+
+        <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+            Medicare Advantage example
+          </p>
+        </div>
+      </div>
+
+      {[
+        {
+          item: "Monthly premium",
+          original:
+            "Most people pay $0 for Part A. Most people still pay the standard Part B premium. A separate Part D plan and/or Medigap policy may have additional premiums.",
+          advantage:
+            "Some plans advertise a $0 premium, but the person usually still pays the Part B premium. Some plans may reduce the Part B premium in certain counties.",
+        },
+        {
+          item: "Hospital deductible or hospital copays",
+          original:
+            "In 2026, Original Medicare Part A has a $1,736 hospital deductible per benefit period. Days 1–60 are $0 after that deductible.",
+          advantage:
+            "A plan may charge a daily hospital copay, such as a set dollar amount per day for the first several days. The exact amount depends on the plan.",
+        },
+        {
+          item: "Longer hospital stay",
+          original:
+            "In 2026, Original Medicare charges $434 per day for hospital days 61–90 and $868 per lifetime reserve day for days 91–150.",
+          advantage:
+            "A plan may have its own inpatient hospital copay schedule. The person should check how many days are charged and what happens after those days.",
+        },
+        {
+          item: "Doctor and outpatient services",
+          original:
+            "In 2026, the Part B deductible is $283. After that, the person usually pays 20% of the Medicare-approved amount for many covered services.",
+          advantage:
+            "A plan may use copays, such as a primary care copay, specialist copay, lab copay, outpatient surgery copay, or coinsurance.",
+        },
+        {
+          item: "Maximum out-of-pocket limit",
+          original:
+            "Original Medicare does not have a yearly out-of-pocket maximum unless the person has other coverage, such as Medigap, Medicaid, or employer/retiree coverage.",
+          advantage:
+            "Medicare Advantage plans have a yearly maximum out-of-pocket limit for covered Part A and Part B services. The exact limit varies by plan.",
+        },
+        {
+          item: "Doctors, hospitals, and prior authorization",
+          original:
+            "Original Medicare is widely accepted by providers who take Medicare. Some services may still have coverage rules.",
+          advantage:
+            "A plan may have networks, referrals, prior authorization, and different rules for out-of-network care.",
+        },
+        {
+          item: "Extra advertised benefits",
+          original:
+            "Original Medicare does not usually include routine dental, vision, hearing, grocery cards, flex cards, or transportation benefits.",
+          advantage:
+            "A plan may include extras such as dental, vision, hearing, OTC, transportation, grocery, or flex-card benefits, but these can have limits and rules.",
+        },
+      ].map((row) => (
+        <div
+          key={row.item}
+          className="grid border-t border-[#d6e3ee] bg-white md:grid-cols-3"
+        >
+          <div className="bg-[#eef7ff] p-5">
+            <p className="font-bold text-[#16324f]">{row.item}</p>
+          </div>
+
+          <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
+            <p className="text-sm leading-6 text-[#526b80]">{row.original}</p>
+          </div>
+
+          <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
+            <p className="text-sm leading-6 text-[#526b80]">{row.advantage}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <div className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-6">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+          The takeaway
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+          A lower premium does not automatically mean lower total cost.
+        </h3>
+
+        <p className="mt-3 leading-7 text-[#526b80]">
+          The real question is what the person may pay when they actually need care:
+          hospital stays, specialists, outpatient procedures, prescriptions, ambulance
+          services, and out-of-network care.
+        </p>
+      </div>
+
+      <div className="rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-6">
+        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+          Important reminder
+        </p>
+
+        <h3 className="mt-3 text-2xl font-bold text-[#881337]">
+          Medicare Advantage costs are plan-specific.
+        </h3>
+
+        <p className="mt-3 leading-7 text-[#7f1d1d]">
+          The Medicare Advantage column above is only an example of what to look for.
+          Seniors should review the exact plan’s Evidence of Coverage, Summary of
+          Benefits, provider directory, drug formulary, and maximum out-of-pocket cost.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* Questions */}
       <section id="questions" className="mx-auto max-w-7xl px-6 py-20">
         <div className="max-w-3xl">
