@@ -292,14 +292,15 @@ function analyzePhone(phone) {
   if (cleaned.length < 10) {
     results.push({
       title: "Phone number",
-      text: "This phone number looks incomplete. Check the number exactly as it appears on the ad, mailer, or caller ID.",
+      text: "This phone number looks incomplete. Check the number exactly as it appears on the ad, mailer, text message, or caller ID.",
     });
   }
 
   if (cleaned.length >= 10) {
     results.push({
       title: "Phone number check",
-      text: "Search this phone number online and compare it with the official company website. If it does not match, call the official number instead.",
+      text:
+        "Do not rely only on the phone number shown in an ad, text, mailer, or caller ID. Search the number online, compare it with the company’s official website, and avoid calling back if the number only appears in ads or lead-generation pages. When in doubt, call Medicare.gov, SHIP, or the official plan number from the plan’s own website.",
     });
   }
 
@@ -638,7 +639,7 @@ export default function CheckBeforeYouSwitch() {
         </div>
       </section>
 
-      <div className="hidden print:block px-6 pt-6">
+      <div className="hidden px-6 pt-6 print:block">
         <h1 className="text-2xl font-bold text-[#16324f]">
           Medicare Before You Switch — Results
         </h1>
@@ -1168,41 +1169,53 @@ export default function CheckBeforeYouSwitch() {
         </div>
       </section>
 
-      {hasAnyInput && (
-        <section id="public-checks" className="mx-auto max-w-7xl px-6 pb-16 print:hidden">
-          <div className="rounded-[2rem] border border-[#bfdbfe] bg-[#eef7ff] p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
-              Public checks
-            </p>
+      <section id="public-checks" className="mx-auto max-w-7xl px-6 pb-16 print:hidden">
+        <div className="rounded-[2rem] border border-[#bfdbfe] bg-[#eef7ff] p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+            Public checks
+          </p>
 
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#16324f]">
-              Where to check next
-            </h2>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#16324f]">
+            Where to check next
+          </h2>
 
-            <p className="mt-3 max-w-3xl leading-7 text-[#526b80]">
-              Use public sources to compare what the ad says with official information.
-              These links open in a new tab.
-            </p>
+          <p className="mt-3 max-w-3xl leading-7 text-[#526b80]">
+            Use public sources to compare what the ad says with official information.
+            These links open in a new tab.
+          </p>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {officialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-[#cfe0ee] bg-white p-5 transition hover:border-[#93c5fd] hover:bg-[#f8fbff]"
-                >
-                  <p className="font-bold text-[#2563eb]">{link.label} →</p>
-                  <p className="mt-2 text-sm leading-6 text-[#526b80]">
-                    {link.help}
-                  </p>
-                </a>
-              ))}
+          {!hasAnyInput && (
+            <div className="mt-6 rounded-2xl border border-[#bfdbfe] bg-white p-5">
+              <p className="font-bold text-[#16324f]">
+                Tip:
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                You can use these official resources anytime, even before entering a message.
+                After you add a company name, website, or phone number above, this section may
+                also include search links for those details.
+              </p>
             </div>
+          )}
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {officialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-[#cfe0ee] bg-white p-5 transition hover:border-[#93c5fd] hover:bg-[#f8fbff]"
+              >
+                <p className="font-bold text-[#2563eb]">{link.label} →</p>
+                <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                  {link.help}
+                </p>
+              </a>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {hasAnyInput && allQuestions.length > 0 && (
         <section className="mx-auto max-w-7xl px-6 pb-20 print:px-6 print:pb-8">
