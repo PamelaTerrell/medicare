@@ -63,6 +63,9 @@ function Home() {
           <a href="#why" className="hover:text-[#16324f]">
             Why It Matters
           </a>
+          <a href="#before-switching" className="hover:text-[#16324f]">
+          Before Switching
+          </a>
           <a href="#questions" className="hover:text-[#16324f]">
             Questions
           </a>
@@ -342,7 +345,7 @@ function Home() {
 </section>
 
 {/* Before You Switch Guide */}
-<section className="bg-[#f5f9fc]">
+<section id="before-switching" className="bg-[#f5f9fc]">
   <div className="mx-auto max-w-7xl px-6 py-20">
     <div className="max-w-3xl">
       <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
