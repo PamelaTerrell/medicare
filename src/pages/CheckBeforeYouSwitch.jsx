@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const WORDS_TO_CHECK = [
@@ -419,6 +419,8 @@ function buildOfficialSearchLinks(companyName, website, phone) {
 }
 
 export default function CheckBeforeYouSwitch() {
+  const resultsRef = useRef(null);
+
   const [input, setInput] = useState("");
   const [sourceType, setSourceType] = useState("Not sure");
   const [companyName, setCompanyName] = useState("");
@@ -478,6 +480,12 @@ export default function CheckBeforeYouSwitch() {
     hasDisclaimer !== "not-sure" ||
     siteVerification;
 
+  const totalItemsFound =
+    wordMatches.length +
+    osintFindings.length +
+    (siteVerification?.simpleFindings?.length || 0) +
+    (siteVerification ? 1 : 0);
+
   const allQuestions = useMemo(() => {
     const questions = wordMatches.flatMap((match) => match.questions);
 
@@ -536,16 +544,23 @@ export default function CheckBeforeYouSwitch() {
 
       setSiteVerification(data);
     } catch {
-  setSiteCheckError(
-    "The website check could not be completed. You can still review the message and use the public links below."
-  );
-} finally {
+      setSiteCheckError(
+        "The website check could not be completed. You can still review the message and use the public links below."
+      );
+    } finally {
       setSiteChecking(false);
     }
   }
 
   function handlePrint() {
     window.print();
+  }
+
+  function handleViewResults() {
+    resultsRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 
   function handleClear() {
@@ -565,11 +580,11 @@ export default function CheckBeforeYouSwitch() {
 
   return (
     <main className="min-h-screen bg-[#f5f9fc] text-[#1f2937]">
-      <div className="border-b border-[#d6e3ee] bg-[#eef7ff] px-5 py-3 text-center text-sm text-[#35556f]">
+      <div className="border-b border-[#d6e3ee] bg-[#eef7ff] px-5 py-3 text-center text-sm text-[#35556f] print:hidden">
         Educational resource only. Not affiliated with Medicare, CMS, HHS, or any government agency.
       </div>
 
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 print:hidden">
         <Link to="/" className="tracking-tight">
           <span className="block text-xl font-bold text-[#16324f]">
             Medicare Before You Switch
@@ -586,6 +601,9 @@ export default function CheckBeforeYouSwitch() {
           <a href="#tool" className="hover:text-[#16324f]">
             Use the Tool
           </a>
+          <a href="#results" className="hover:text-[#16324f]">
+            Results
+          </a>
           <a href="#public-checks" className="hover:text-[#16324f]">
             Public Checks
           </a>
@@ -595,7 +613,7 @@ export default function CheckBeforeYouSwitch() {
         </nav>
       </header>
 
-      <section className="relative overflow-hidden border-y border-[#d6e3ee] bg-gradient-to-br from-[#16324f] via-[#1e4f78] to-[#0f766e] text-white">
+      <section className="relative overflow-hidden border-y border-[#d6e3ee] bg-gradient-to-br from-[#16324f] via-[#1e4f78] to-[#0f766e] text-white print:hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_35%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20">
@@ -620,9 +638,18 @@ export default function CheckBeforeYouSwitch() {
         </div>
       </section>
 
+      <div className="hidden print:block px-6 pt-6">
+        <h1 className="text-2xl font-bold text-[#16324f]">
+          Medicare Before You Switch — Results
+        </h1>
+        <p className="mt-2 text-sm text-[#526b80]">
+          Educational resource only. Not affiliated with Medicare, CMS, HHS, or any government agency.
+        </p>
+      </div>
+
       <section
         id="tool"
-        className="mx-auto grid max-w-7xl gap-8 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr]"
+        className="mx-auto grid max-w-7xl gap-8 px-6 py-14 lg:grid-cols-[1.05fr_0.95fr] print:hidden"
       >
         <div className="rounded-[2rem] border border-[#d6e3ee] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
@@ -786,8 +813,18 @@ export default function CheckBeforeYouSwitch() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
+              onClick={handleViewResults}
+              disabled={!hasAnyInput}
+              className="rounded-full bg-[#2563eb] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8] disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              View Results on Page
+            </button>
+
+            <button
+              type="button"
               onClick={handlePrint}
-              className="rounded-full bg-[#2563eb] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8]"
+              disabled={!hasAnyInput}
+              className="rounded-full border border-[#93c5fd] bg-white px-7 py-4 text-sm font-semibold text-[#1d4ed8] transition hover:bg-[#eff6ff] disabled:cursor-not-allowed disabled:opacity-50"
             >
               Print Results
             </button>
@@ -800,6 +837,59 @@ export default function CheckBeforeYouSwitch() {
               Clear
             </button>
           </div>
+
+          {hasAnyInput && (
+            <div className="mt-8 rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-5">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0f766e]">
+                Results are ready on this page
+              </p>
+
+              <h3 className="mt-2 text-2xl font-bold text-[#16324f]">
+                {review.label}
+              </h3>
+
+              <p className="mt-3 leading-7 text-[#526b80]">
+                {review.description}
+              </p>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-[#2563eb]">
+                    {wordMatches.length}
+                  </p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#64748b]">
+                    word checks
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-[#2563eb]">
+                    {osintFindings.length}
+                  </p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#64748b]">
+                    source checks
+                  </p>
+                </div>
+
+                <div className="rounded-2xl bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-[#2563eb]">
+                    {allQuestions.length}
+                  </p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#64748b]">
+                    questions
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleViewResults}
+                className="mt-5 rounded-full bg-[#16324f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0f253a]"
+              >
+                Jump to Detailed Results
+              </button>
+            </div>
+          )}
         </div>
 
         <aside className="rounded-[2rem] border border-[#d6e3ee] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
@@ -816,6 +906,20 @@ export default function CheckBeforeYouSwitch() {
               ? review.description
               : "Paste a Medicare message and add the sender details to see what needs checking."}
           </p>
+
+          {hasAnyInput && (
+            <div className="mt-6 rounded-2xl border border-[#bfdbfe] bg-[#f8fbff] p-5">
+              <p className="text-sm font-bold text-[#16324f]">
+                On-page results found:
+              </p>
+              <p className="mt-2 text-4xl font-bold text-[#2563eb]">
+                {totalItemsFound}
+              </p>
+              <p className="mt-1 text-sm leading-6 text-[#526b80]">
+                Scroll down or select “View Results on Page” to read the details.
+              </p>
+            </div>
+          )}
 
           <div className="mt-6 rounded-2xl border border-[#bfdbfe] bg-[#eef7ff] p-5">
             <p className="font-bold text-[#16324f]">
@@ -842,8 +946,8 @@ export default function CheckBeforeYouSwitch() {
         </aside>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16">
-        <div className="rounded-[2rem] border border-[#d6e3ee] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
+      <section id="results" ref={resultsRef} className="mx-auto max-w-7xl px-6 pb-16 print:px-6 print:py-6">
+        <div className="rounded-[2rem] border border-[#d6e3ee] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8 print:shadow-none">
           <div className="border-b border-[#d6e3ee] pb-6">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
               Results
@@ -854,14 +958,67 @@ export default function CheckBeforeYouSwitch() {
             </h2>
 
             <p className="mt-3 max-w-3xl leading-7 text-[#526b80]">
+              These results are shown directly on the page. Printing is optional.
               These are not accusations. They are reminders to slow down and check
               the details before making a coverage decision.
             </p>
+
+            {hasAnyInput && (
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row print:hidden">
+                <button
+                  type="button"
+                  onClick={handlePrint}
+                  className="rounded-full bg-[#2563eb] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8]"
+                >
+                  Print These Results
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleClear}
+                  className="rounded-full border border-[#93c5fd] bg-white px-6 py-3 text-sm font-semibold text-[#1d4ed8] transition hover:bg-[#eff6ff]"
+                >
+                  Check Different Wording
+                </button>
+              </div>
+            )}
           </div>
 
           {!hasAnyInput && (
-            <div className="py-10 text-[#526b80]">
+            <div className="py-10 text-[#526b80] print:hidden">
               Fill in the tool above to begin.
+            </div>
+          )}
+
+          {hasAnyInput && (
+            <div className="py-8">
+              <div className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-5">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                  Review summary
+                </p>
+
+                <h3 className="mt-2 text-2xl font-bold text-[#16324f]">
+                  {review.label}
+                </h3>
+
+                <p className="mt-3 leading-7 text-[#526b80]">
+                  {review.description}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {hasAnyInput && input.trim() && (
+            <div className="border-t border-[#d6e3ee] py-8">
+              <h3 className="text-2xl font-bold text-[#16324f]">
+                Message reviewed
+              </h3>
+
+              <div className="mt-5 rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+                <p className="whitespace-pre-wrap text-sm leading-7 text-[#526b80]">
+                  {input}
+                </p>
+              </div>
             </div>
           )}
 
@@ -881,7 +1038,7 @@ export default function CheckBeforeYouSwitch() {
           )}
 
           {wordMatches.length > 0 && (
-            <div className="py-8">
+            <div className="border-t border-[#d6e3ee] py-8">
               <h3 className="text-2xl font-bold text-[#16324f]">
                 Words to check
               </h3>
@@ -890,7 +1047,7 @@ export default function CheckBeforeYouSwitch() {
                 {wordMatches.map((match) => (
                   <article
                     key={match.id}
-                    className="rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5"
+                    className="rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5 print:break-inside-avoid"
                   >
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div>
@@ -928,7 +1085,7 @@ export default function CheckBeforeYouSwitch() {
                 {osintFindings.map((finding, index) => (
                   <article
                     key={`${finding.title}-${index}`}
-                    className="rounded-2xl border border-[#d6e3ee] bg-white p-5 shadow-sm"
+                    className="rounded-2xl border border-[#d6e3ee] bg-white p-5 shadow-sm print:break-inside-avoid"
                   >
                     <h4 className="text-lg font-bold text-[#16324f]">
                       {finding.title}
@@ -966,7 +1123,7 @@ export default function CheckBeforeYouSwitch() {
                 {siteVerification.simpleFindings?.map((finding, index) => (
                   <article
                     key={`${finding.title}-${index}`}
-                    className="rounded-2xl border border-[#d6e3ee] bg-white p-5 shadow-sm"
+                    className="rounded-2xl border border-[#d6e3ee] bg-white p-5 shadow-sm print:break-inside-avoid"
                   >
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0f766e]">
                       {finding.level}
@@ -983,7 +1140,7 @@ export default function CheckBeforeYouSwitch() {
                 ))}
 
                 <article
-                  className={`rounded-2xl border p-5 shadow-sm ${
+                  className={`rounded-2xl border p-5 shadow-sm print:break-inside-avoid ${
                     siteVerification.safeBrowsing?.status === "unsafe_match_found"
                       ? "border-[#fecdd3] bg-[#fff1f2]"
                       : "border-[#d6e3ee] bg-white"
@@ -1012,7 +1169,7 @@ export default function CheckBeforeYouSwitch() {
       </section>
 
       {hasAnyInput && (
-        <section id="public-checks" className="mx-auto max-w-7xl px-6 pb-16">
+        <section id="public-checks" className="mx-auto max-w-7xl px-6 pb-16 print:hidden">
           <div className="rounded-[2rem] border border-[#bfdbfe] bg-[#eef7ff] p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
               Public checks
@@ -1048,8 +1205,8 @@ export default function CheckBeforeYouSwitch() {
       )}
 
       {hasAnyInput && allQuestions.length > 0 && (
-        <section className="mx-auto max-w-7xl px-6 pb-20">
-          <div className="rounded-[2rem] border border-[#bfdbfe] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8">
+        <section className="mx-auto max-w-7xl px-6 pb-20 print:px-6 print:pb-8">
+          <div className="rounded-[2rem] border border-[#bfdbfe] bg-white p-6 shadow-xl shadow-[#16324f]/5 sm:p-8 print:shadow-none">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
               Simple checklist
             </p>
@@ -1072,8 +1229,8 @@ export default function CheckBeforeYouSwitch() {
         </section>
       )}
 
-      <section id="disclaimer" className="border-t border-[#d6e3ee] bg-[#f8fbff]">
-        <div className="mx-auto max-w-5xl px-6 py-12">
+      <section id="disclaimer" className="border-t border-[#d6e3ee] bg-[#f8fbff] print:bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-12 print:py-6">
           <h2 className="text-2xl font-bold text-[#16324f]">
             Important disclaimer
           </h2>
@@ -1089,7 +1246,7 @@ export default function CheckBeforeYouSwitch() {
         </div>
       </section>
 
-      <footer className="bg-[#16324f] px-6 py-10 text-center text-sm text-white">
+      <footer className="bg-[#16324f] px-6 py-10 text-center text-sm text-white print:hidden">
         <p className="text-xl font-bold">Medicare Before You Switch</p>
 
         <p className="mt-3 text-[#cfe0ee]">
