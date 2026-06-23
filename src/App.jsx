@@ -60,20 +60,29 @@ function Home() {
           <Link to="/check-before-you-switch" className="hover:text-[#16324f]">
             Check Before You Switch
           </Link>
+
           <a href="#why" className="hover:text-[#16324f]">
             Why It Matters
           </a>
+
           <a href="#before-switching" className="hover:text-[#16324f]">
-          Before Switching
+            Before Switching
           </a>
+
           <a href="#questions" className="hover:text-[#16324f]">
             Questions
           </a>
+
           <a href="#topics" className="hover:text-[#16324f]">
             Topics
           </a>
+
           <a href="#disclaimer" className="hover:text-[#16324f]">
             Disclaimer
+          </a>
+
+          <a href="#support" className="hover:text-[#16324f]">
+            Support
           </a>
         </nav>
       </header>
@@ -176,6 +185,67 @@ function Home() {
         </div>
       </section>
 
+      {/* Support This Project */}
+      <section id="support" className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#d6e3ee] bg-white p-8 shadow-xl shadow-[#16324f]/5 md:p-10">
+          <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-full bg-[#ffedd5]" />
+
+          <div className="relative grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+                Support senior education
+              </p>
+
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+                Help keep this Medicare scam-awareness resource available.
+              </h2>
+
+              <p className="mt-5 text-lg leading-8 text-[#526b80]">
+                Medicare Before You Switch is an independent educational project created
+                to help seniors, families, and caregivers slow down, ask better questions,
+                and recognize red flags before responding to Medicare ads, messages, or
+                phone calls.
+              </p>
+
+              <p className="mt-5 text-base leading-7 text-[#526b80]">
+                Contributions help support website hosting, research time, printable guides,
+                accessibility improvements, and free plain-language educational resources.
+              </p>
+
+              <p className="mt-5 rounded-2xl border border-[#fde68a] bg-[#fffbeb] p-4 text-sm leading-6 text-[#92400e]">
+                This project is not a nonprofit organization, and contributions are not
+                tax-deductible charitable donations.
+              </p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7">
+              <h3 className="text-2xl font-bold text-[#16324f]">
+                Want to support the project?
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Your support helps make it possible to create more free guides, checklists,
+                and tools for older adults and the people helping them.
+              </p>
+
+              <a
+                href="https://buy.stripe.com/7sY3co4gqg7oeUFfxV2cg07"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex rounded-full bg-[#2563eb] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8]"
+              >
+                Support This Project
+              </a>
+
+              <p className="mt-4 text-xs leading-5 text-[#64748b]">
+                Please do not send personal Medicare information, Social Security numbers,
+                or private health details through a support payment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Credibility strip */}
       <section className="border-y border-[#d6e3ee] bg-white">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-3">
@@ -227,513 +297,513 @@ function Home() {
       </section>
 
       {/* Medicare Basics */}
-<section className="bg-white">
-  <div className="mx-auto max-w-7xl px-6 py-20">
-    <div className="max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
-        Medicare basics
-      </p>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+              Medicare basics
+            </p>
 
-      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
-        Before comparing plans, understand what Medicare and Medicaid mean.
-      </h2>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+              Before comparing plans, understand what Medicare and Medicaid mean.
+            </h2>
 
-      <p className="mt-5 text-lg leading-8 text-[#526b80]">
-        Many advertisements use words like Medicare, Medicaid, allowance, give-back,
-        and benefits in ways that can confuse people. These programs are related to
-        healthcare, but they are not the same thing.
-      </p>
-    </div>
-
-    <div className="mt-10 grid gap-6 lg:grid-cols-3">
-      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-[#f8fbff] p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          What is Medicare?
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          Medicare is health insurance mainly for people 65 or older.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          Medicare is a federal health insurance program. Most people become eligible
-          at age 65, but some people may qualify earlier because of a disability,
-          End-Stage Renal Disease, or ALS.
-        </p>
-
-        <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
-          <li>• Part A helps cover hospital care.</li>
-          <li>• Part B helps cover doctor and outpatient care.</li>
-          <li>• Part C is Medicare Advantage through private insurance companies.</li>
-          <li>• Part D helps cover prescription drugs.</li>
-        </ul>
-      </article>
-
-      <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
-          Current Part B cost
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          The standard Part B premium is $202.90 per month in 2026.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          Most people pay the standard Part B premium. In 2026, the standard monthly
-          Part B premium is $202.90, and the Part B deductible is $283 for the year.
-        </p>
-
-        <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
-          <p className="text-sm font-bold text-[#16324f]">
-            Important to remember:
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-[#526b80]">
-            A Medicare Advantage plan may advertise a $0 plan premium, but the person
-            usually still pays the Part B premium unless a specific give-back benefit
-            reduces part of it.
-          </p>
-        </div>
-      </article>
-
-      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          What is Medicaid?
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          Medicaid is different from Medicare.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          Medicaid provides health coverage for eligible people with limited income
-          and resources. It is administered by states according to federal requirements
-          and is funded jointly by states and the federal government.
-        </p>
-
-        <div className="mt-5 rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
-          <p className="text-sm font-bold text-[#16324f]">
-            Why this matters:
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-[#526b80]">
-            Some people have both Medicare and Medicaid. Others have Medicare only.
-            Eligibility for Medicaid can affect which benefits, costs, and plan options
-            apply.
-          </p>
-        </div>
-      </article>
-    </div>
-
-    <div className="mt-8 rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-7">
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
-        Common confusion
-      </p>
-
-      <h3 className="mt-3 text-2xl font-bold text-[#881337]">
-        Medicare and Medicaid are not interchangeable.
-      </h3>
-
-      <p className="mt-4 max-w-4xl leading-7 text-[#7f1d1d]">
-        A Medicare ad may mention extra help, Medicaid, dual eligibility, grocery
-        cards, give-back benefits, or special needs plans. Those details can depend on
-        income, location, Medicaid status, health conditions, and the exact plan. Before
-        switching coverage, seniors should confirm what they personally qualify for.
-      </p>
-    </div>
-  </div>
-</section>
-
-{/* Before You Switch Guide */}
-<section id="before-switching" className="bg-[#f5f9fc]">
-  <div className="mx-auto max-w-7xl px-6 py-20">
-    <div className="max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
-        Before you switch
-      </p>
-
-      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
-        Medicare Advantage may help some people — but the full decision matters.
-      </h2>
-
-      <p className="mt-5 text-lg leading-8 text-[#526b80]">
-        A Medicare Advantage plan is not automatically bad. Some people like their plan,
-        their doctors are in network, their prescriptions are covered, and the extra benefits
-        are useful. The concern is switching because of an advertisement without understanding
-        the costs, rules, networks, and possible tradeoffs.
-      </p>
-    </div>
-
-    <div className="mt-10 grid gap-6 lg:grid-cols-2">
-      <article className="rounded-[2rem] border border-[#bfdbfe] bg-white p-7 shadow-xl shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          Do not enroll until you verify
-        </p>
-
-        <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
-          Check the care you actually use.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          Before changing Medicare coverage, write these details down and compare them
-          against the exact plan documents — not just the commercial or phone script.
-        </p>
-
-        <ul className="mt-6 grid gap-3 text-sm leading-6 text-[#35556f] sm:grid-cols-2">
-          {[
-            "Current doctors and specialists",
-            "Preferred hospital",
-            "Current prescriptions and dosages",
-            "Preferred pharmacy",
-            "Retiree, union, employer, military, or spouse benefits",
-            "Current monthly premium",
-            "Current deductible",
-            "Expected copays or coinsurance",
-            "Maximum out-of-pocket cost",
-            "Travel or out-of-area care needs",
-            "Prior authorization rules",
-            "Referral requirements",
-          ].map((item) => (
-            <li key={item} className="flex gap-3">
-              <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2563eb] bg-[#eef7ff] text-xs text-[#2563eb]">
-                ✓
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </article>
-
-      <article className="rounded-[2rem] border border-[#fecdd3] bg-[#fff1f2] p-7 shadow-xl shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
-          Medigap caution
-        </p>
-
-        <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#881337]">
-          Leaving Original Medicare with Medigap can be a serious decision.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#7f1d1d]">
-          If someone currently has Original Medicare with a Medigap policy, they should
-          ask whether they can get that Medigap policy back later if they switch to Medicare
-          Advantage and change their mind.
-        </p>
-
-        <div className="mt-6 rounded-2xl border border-[#fecdd3] bg-white p-5">
-          <p className="text-sm font-bold text-[#881337]">
-            Important question:
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-[#7f1d1d]">
-            “If I leave this Medigap policy, will I have guaranteed rights to buy a Medigap
-            policy later, or could I have to answer health questions and go through medical
-            underwriting?”
-          </p>
-        </div>
-
-        <p className="mt-5 text-sm leading-6 text-[#7f1d1d]">
-          Rules can depend on timing, state protections, and the person’s situation. This is
-          one reason seniors should verify before switching.
-        </p>
-      </article>
-    </div>
-
-    <div className="mt-6 grid gap-6 lg:grid-cols-3">
-      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          Who to contact first
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          Do not rely only on the ad.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          Before switching, compare the offer with official or direct sources.
-        </p>
-
-        <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
-          <li>• Medicare.gov</li>
-          <li>• 1-800-MEDICARE</li>
-          <li>• The plan’s official documents</li>
-          <li>• Your current doctors</li>
-          <li>• Your preferred hospital</li>
-          <li>• Your pharmacy</li>
-          <li>• Your retiree, union, or employer benefits office</li>
-          <li>• VA or TRICARE, if applicable</li>
-          <li>• SHIP for local Medicare counseling</li>
-        </ul>
-      </article>
-
-      <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
-          Dual Eligible
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          Some people have both Medicare and Medicaid.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          People who have both Medicare and full Medicaid coverage are often called
-          “dually eligible.” Medicare generally pays first for Medicare-covered services,
-          and Medicaid pays after Medicare and any other insurance.
-        </p>
-
-        <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
-          <p className="text-sm font-bold text-[#16324f]">
-            Why this matters:
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-[#526b80]">
-            Dual eligibility can affect costs, plan choices, Special Needs Plans, extra help,
-            and whether certain advertised benefits apply.
-          </p>
-        </div>
-      </article>
-
-      <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          Red flag phrases
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          These words deserve a closer look.
-        </h3>
-
-        <p className="mt-4 leading-7 text-[#526b80]">
-          These phrases are not automatically scams, but they are reasons to slow down and verify.
-        </p>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {[
-            "You may qualify",
-            "Call now",
-            "Free money",
-            "Government benefit",
-            "Get money back",
-            "Use it for groceries",
-            "You are missing out",
-            "Give us your Medicare number",
-            "No cost to you",
-            "Limited time",
-            "Pre-approved",
-            "Senior allowance",
-          ].map((phrase) => (
-            <span
-              key={phrase}
-              className="rounded-full border border-[#cfe0ee] bg-[#f8fbff] px-3 py-2 text-xs font-semibold text-[#35556f]"
-            >
-              {phrase}
-            </span>
-          ))}
-        </div>
-      </article>
-    </div>
-
-    <div className="mt-6 rounded-[2rem] border border-[#d6e3ee] bg-white p-7 shadow-xl shadow-[#16324f]/5">
-      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-            Medicare vs. Medicaid reminder
-          </p>
-
-          <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
-            Similar names, different programs.
-          </h3>
-
-          <p className="mt-4 leading-7 text-[#526b80]">
-            Medicare and Medicaid can work together for some people, but they are not the
-            same program. That is why eligibility words in advertisements should be checked
-            carefully.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-[#bfdbfe] bg-[#eef7ff] p-5">
-            <p className="font-bold text-[#16324f]">Medicare</p>
-            <p className="mt-2 text-sm leading-6 text-[#526b80]">
-              Federal health insurance mainly for people 65 or older, and for some younger
-              people with disabilities, End-Stage Renal Disease, or ALS.
+            <p className="mt-5 text-lg leading-8 text-[#526b80]">
+              Many advertisements use words like Medicare, Medicaid, allowance, give-back,
+              and benefits in ways that can confuse people. These programs are related to
+              healthcare, but they are not the same thing.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
-            <p className="font-bold text-[#16324f]">Medicaid</p>
-            <p className="mt-2 text-sm leading-6 text-[#526b80]">
-              Health coverage for eligible people with limited income and resources. It is
-              administered by states under federal rules.
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-[#f8fbff] p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                What is Medicare?
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                Medicare is health insurance mainly for people 65 or older.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Medicare is a federal health insurance program. Most people become eligible
+                at age 65, but some people may qualify earlier because of a disability,
+                End-Stage Renal Disease, or ALS.
+              </p>
+
+              <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
+                <li>• Part A helps cover hospital care.</li>
+                <li>• Part B helps cover doctor and outpatient care.</li>
+                <li>• Part C is Medicare Advantage through private insurance companies.</li>
+                <li>• Part D helps cover prescription drugs.</li>
+              </ul>
+            </article>
+
+            <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
+                Current Part B cost
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                The standard Part B premium is $202.90 per month in 2026.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Most people pay the standard Part B premium. In 2026, the standard monthly
+                Part B premium is $202.90, and the Part B deductible is $283 for the year.
+              </p>
+
+              <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
+                <p className="text-sm font-bold text-[#16324f]">
+                  Important to remember:
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                  A Medicare Advantage plan may advertise a $0 plan premium, but the person
+                  usually still pays the Part B premium unless a specific give-back benefit
+                  reduces part of it.
+                </p>
+              </div>
+            </article>
+
+            <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                What is Medicaid?
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                Medicaid is different from Medicare.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Medicaid provides health coverage for eligible people with limited income
+                and resources. It is administered by states according to federal requirements
+                and is funded jointly by states and the federal government.
+              </p>
+
+              <div className="mt-5 rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+                <p className="text-sm font-bold text-[#16324f]">
+                  Why this matters:
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                  Some people have both Medicare and Medicaid. Others have Medicare only.
+                  Eligibility for Medicaid can affect which benefits, costs, and plan options
+                  apply.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-8 rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-7">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+              Common confusion
+            </p>
+
+            <h3 className="mt-3 text-2xl font-bold text-[#881337]">
+              Medicare and Medicaid are not interchangeable.
+            </h3>
+
+            <p className="mt-4 max-w-4xl leading-7 text-[#7f1d1d]">
+              A Medicare ad may mention extra help, Medicaid, dual eligibility, grocery
+              cards, give-back benefits, or special needs plans. Those details can depend on
+              income, location, Medicaid status, health conditions, and the exact plan. Before
+              switching coverage, seniors should confirm what they personally qualify for.
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div className="mt-6 rounded-[1.5rem] border border-[#fde68a] bg-[#fffbeb] p-6">
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
-        Bottom line
-      </p>
+      {/* Before You Switch Guide */}
+      <section id="before-switching" className="bg-[#f5f9fc]">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+              Before you switch
+            </p>
 
-      <h3 className="mt-3 text-2xl font-bold text-[#92400e]">
-        The benefit may be real, but the decision is bigger than the benefit.
-      </h3>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+              Medicare Advantage may help some people — but the full decision matters.
+            </h2>
 
-      <p className="mt-3 max-w-4xl leading-7 text-[#92400e]">
-        Before switching coverage because of a grocery card, give-back allowance, dental
-        benefit, or $0 premium message, seniors should compare the full plan: doctors,
-        hospitals, prescriptions, prior authorization, referrals, out-of-pocket exposure,
-        retiree benefits, and whether Medicaid or dual eligibility affects their options.
-      </p>
-    </div>
-  </div>
-</section>
+            <p className="mt-5 text-lg leading-8 text-[#526b80]">
+              A Medicare Advantage plan is not automatically bad. Some people like their plan,
+              their doctors are in network, their prescriptions are covered, and the extra benefits
+              are useful. The concern is switching because of an advertisement without understanding
+              the costs, rules, networks, and possible tradeoffs.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-[#bfdbfe] bg-white p-7 shadow-xl shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                Do not enroll until you verify
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
+                Check the care you actually use.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Before changing Medicare coverage, write these details down and compare them
+                against the exact plan documents — not just the commercial or phone script.
+              </p>
+
+              <ul className="mt-6 grid gap-3 text-sm leading-6 text-[#35556f] sm:grid-cols-2">
+                {[
+                  "Current doctors and specialists",
+                  "Preferred hospital",
+                  "Current prescriptions and dosages",
+                  "Preferred pharmacy",
+                  "Retiree, union, employer, military, or spouse benefits",
+                  "Current monthly premium",
+                  "Current deductible",
+                  "Expected copays or coinsurance",
+                  "Maximum out-of-pocket cost",
+                  "Travel or out-of-area care needs",
+                  "Prior authorization rules",
+                  "Referral requirements",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2563eb] bg-[#eef7ff] text-xs text-[#2563eb]">
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-[2rem] border border-[#fecdd3] bg-[#fff1f2] p-7 shadow-xl shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+                Medigap caution
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#881337]">
+                Leaving Original Medicare with Medigap can be a serious decision.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#7f1d1d]">
+                If someone currently has Original Medicare with a Medigap policy, they should
+                ask whether they can get that Medigap policy back later if they switch to Medicare
+                Advantage and change their mind.
+              </p>
+
+              <div className="mt-6 rounded-2xl border border-[#fecdd3] bg-white p-5">
+                <p className="text-sm font-bold text-[#881337]">
+                  Important question:
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-[#7f1d1d]">
+                  “If I leave this Medigap policy, will I have guaranteed rights to buy a Medigap
+                  policy later, or could I have to answer health questions and go through medical
+                  underwriting?”
+                </p>
+              </div>
+
+              <p className="mt-5 text-sm leading-6 text-[#7f1d1d]">
+                Rules can depend on timing, state protections, and the person’s situation. This is
+                one reason seniors should verify before switching.
+              </p>
+            </article>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                Who to contact first
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                Do not rely only on the ad.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                Before switching, compare the offer with official or direct sources.
+              </p>
+
+              <ul className="mt-5 space-y-2 text-sm leading-6 text-[#526b80]">
+                <li>• Medicare.gov</li>
+                <li>• 1-800-MEDICARE</li>
+                <li>• The plan’s official documents</li>
+                <li>• Your current doctors</li>
+                <li>• Your preferred hospital</li>
+                <li>• Your pharmacy</li>
+                <li>• Your retiree, union, or employer benefits office</li>
+                <li>• VA or TRICARE, if applicable</li>
+                <li>• SHIP for local Medicare counseling</li>
+              </ul>
+            </article>
+
+            <article className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
+                Dual Eligible
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                Some people have both Medicare and Medicaid.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                People who have both Medicare and full Medicaid coverage are often called
+                “dually eligible.” Medicare generally pays first for Medicare-covered services,
+                and Medicaid pays after Medicare and any other insurance.
+              </p>
+
+              <div className="mt-5 rounded-2xl border border-[#bfdbfe] bg-white p-5">
+                <p className="text-sm font-bold text-[#16324f]">
+                  Why this matters:
+                </p>
+
+                <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                  Dual eligibility can affect costs, plan choices, Special Needs Plans, extra help,
+                  and whether certain advertised benefits apply.
+                </p>
+              </div>
+            </article>
+
+            <article className="rounded-[1.5rem] border border-[#d6e3ee] bg-white p-7 shadow-sm shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                Red flag phrases
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                These words deserve a closer look.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                These phrases are not automatically scams, but they are reasons to slow down and verify.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {[
+                  "You may qualify",
+                  "Call now",
+                  "Free money",
+                  "Government benefit",
+                  "Get money back",
+                  "Use it for groceries",
+                  "You are missing out",
+                  "Give us your Medicare number",
+                  "No cost to you",
+                  "Limited time",
+                  "Pre-approved",
+                  "Senior allowance",
+                ].map((phrase) => (
+                  <span
+                    key={phrase}
+                    className="rounded-full border border-[#cfe0ee] bg-[#f8fbff] px-3 py-2 text-xs font-semibold text-[#35556f]"
+                  >
+                    {phrase}
+                  </span>
+                ))}
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-6 rounded-[2rem] border border-[#d6e3ee] bg-white p-7 shadow-xl shadow-[#16324f]/5">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                  Medicare vs. Medicaid reminder
+                </p>
+
+                <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#16324f]">
+                  Similar names, different programs.
+                </h3>
+
+                <p className="mt-4 leading-7 text-[#526b80]">
+                  Medicare and Medicaid can work together for some people, but they are not the
+                  same program. That is why eligibility words in advertisements should be checked
+                  carefully.
+                </p>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-[#bfdbfe] bg-[#eef7ff] p-5">
+                  <p className="font-bold text-[#16324f]">Medicare</p>
+                  <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                    Federal health insurance mainly for people 65 or older, and for some younger
+                    people with disabilities, End-Stage Renal Disease, or ALS.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#d6e3ee] bg-[#f8fbff] p-5">
+                  <p className="font-bold text-[#16324f]">Medicaid</p>
+                  <p className="mt-2 text-sm leading-6 text-[#526b80]">
+                    Health coverage for eligible people with limited income and resources. It is
+                    administered by states under federal rules.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-[1.5rem] border border-[#fde68a] bg-[#fffbeb] p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
+              Bottom line
+            </p>
+
+            <h3 className="mt-3 text-2xl font-bold text-[#92400e]">
+              The benefit may be real, but the decision is bigger than the benefit.
+            </h3>
+
+            <p className="mt-3 max-w-4xl leading-7 text-[#92400e]">
+              Before switching coverage because of a grocery card, give-back allowance, dental
+              benefit, or $0 premium message, seniors should compare the full plan: doctors,
+              hospitals, prescriptions, prior authorization, referrals, out-of-pocket exposure,
+              retiree benefits, and whether Medicaid or dual eligibility affects their options.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Example Comparison */}
-<section className="bg-white">
-  <div className="mx-auto max-w-7xl px-6 py-20">
-    <div className="max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
-        Example comparison
-      </p>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+              Example comparison
+            </p>
 
-      <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
-        Do not compare only the advertised benefit. Compare the costs behind the plan.
-      </h2>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+              Do not compare only the advertised benefit. Compare the costs behind the plan.
+            </h2>
 
-      <p className="mt-5 text-lg leading-8 text-[#526b80]">
-        A grocery card, dental benefit, or give-back allowance may sound helpful.
-        But before switching Medicare coverage, seniors should also compare hospital
-        costs, doctor costs, drug coverage, network rules, prior authorization, and
-        maximum out-of-pocket exposure.
-      </p>
-    </div>
-
-    <div className="mt-10 overflow-hidden rounded-[2rem] border border-[#d6e3ee] bg-[#f8fbff] shadow-xl shadow-[#16324f]/5">
-      <div className="grid bg-[#16324f] text-white md:grid-cols-3">
-        <div className="p-5 md:col-span-1">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
-            What to compare
-          </p>
-        </div>
-
-        <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
-            Original Medicare example
-          </p>
-        </div>
-
-        <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
-            Medicare Advantage example
-          </p>
-        </div>
-      </div>
-
-      {[
-        {
-  item: "Monthly premium",
-  original:
-    "Most people pay $0 for Part A if they or a spouse paid Medicare taxes long enough. Most people pay the standard Part B premium, which is $202.90 per month in 2026. A separate Part D plan and/or Medigap policy may have additional premiums.",
-  advantage:
-    "Some Medicare Advantage plans advertise a $0 plan premium, but the person usually still pays the Part B premium. Some plans may reduce part of the Part B premium in certain counties.",
-},
-        {
-          item: "Hospital deductible or hospital copays",
-          original:
-            "In 2026, Original Medicare Part A has a $1,736 hospital deductible per benefit period. Days 1–60 are $0 after that deductible.",
-          advantage:
-            "A plan may charge a daily hospital copay, such as a set dollar amount per day for the first several days. The exact amount depends on the plan.",
-        },
-        {
-          item: "Longer hospital stay",
-          original:
-            "In 2026, Original Medicare charges $434 per day for hospital days 61–90 and $868 per lifetime reserve day for days 91–150.",
-          advantage:
-            "A plan may have its own inpatient hospital copay schedule. The person should check how many days are charged and what happens after those days.",
-        },
-        {
-          item: "Doctor and outpatient services",
-          original:
-            "In 2026, the Part B deductible is $283. After that, the person usually pays 20% of the Medicare-approved amount for many covered services.",
-          advantage:
-            "A plan may use copays, such as a primary care copay, specialist copay, lab copay, outpatient surgery copay, or coinsurance.",
-        },
-        {
-          item: "Maximum out-of-pocket limit",
-          original:
-            "Original Medicare does not have a yearly out-of-pocket maximum unless the person has other coverage, such as Medigap, Medicaid, or employer/retiree coverage.",
-          advantage:
-            "Medicare Advantage plans have a yearly maximum out-of-pocket limit for covered Part A and Part B services. The exact limit varies by plan.",
-        },
-        {
-          item: "Doctors, hospitals, and prior authorization",
-          original:
-            "Original Medicare is widely accepted by providers who take Medicare. Some services may still have coverage rules.",
-          advantage:
-            "A plan may have networks, referrals, prior authorization, and different rules for out-of-network care.",
-        },
-        {
-          item: "Extra advertised benefits",
-          original:
-            "Original Medicare does not usually include routine dental, vision, hearing, grocery cards, flex cards, or transportation benefits.",
-          advantage:
-            "A plan may include extras such as dental, vision, hearing, OTC, transportation, grocery, or flex-card benefits, but these can have limits and rules.",
-        },
-      ].map((row) => (
-        <div
-          key={row.item}
-          className="grid border-t border-[#d6e3ee] bg-white md:grid-cols-3"
-        >
-          <div className="bg-[#eef7ff] p-5">
-            <p className="font-bold text-[#16324f]">{row.item}</p>
+            <p className="mt-5 text-lg leading-8 text-[#526b80]">
+              A grocery card, dental benefit, or give-back allowance may sound helpful.
+              But before switching Medicare coverage, seniors should also compare hospital
+              costs, doctor costs, drug coverage, network rules, prior authorization, and
+              maximum out-of-pocket exposure.
+            </p>
           </div>
 
-          <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
-            <p className="text-sm leading-6 text-[#526b80]">{row.original}</p>
+          <div className="mt-10 overflow-hidden rounded-[2rem] border border-[#d6e3ee] bg-[#f8fbff] shadow-xl shadow-[#16324f]/5">
+            <div className="grid bg-[#16324f] text-white md:grid-cols-3">
+              <div className="p-5 md:col-span-1">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+                  What to compare
+                </p>
+              </div>
+
+              <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+                  Original Medicare example
+                </p>
+              </div>
+
+              <div className="border-t border-white/15 p-5 md:border-l md:border-t-0">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#bfdbfe]">
+                  Medicare Advantage example
+                </p>
+              </div>
+            </div>
+
+            {[
+              {
+                item: "Monthly premium",
+                original:
+                  "Most people pay $0 for Part A if they or a spouse paid Medicare taxes long enough. Most people pay the standard Part B premium, which is $202.90 per month in 2026. A separate Part D plan and/or Medigap policy may have additional premiums.",
+                advantage:
+                  "Some Medicare Advantage plans advertise a $0 plan premium, but the person usually still pays the Part B premium. Some plans may reduce part of the Part B premium in certain counties.",
+              },
+              {
+                item: "Hospital deductible or hospital copays",
+                original:
+                  "In 2026, Original Medicare Part A has a $1,736 hospital deductible per benefit period. Days 1–60 are $0 after that deductible.",
+                advantage:
+                  "A plan may charge a daily hospital copay, such as a set dollar amount per day for the first several days. The exact amount depends on the plan.",
+              },
+              {
+                item: "Longer hospital stay",
+                original:
+                  "In 2026, Original Medicare charges $434 per day for hospital days 61–90 and $868 per lifetime reserve day for days 91–150.",
+                advantage:
+                  "A plan may have its own inpatient hospital copay schedule. The person should check how many days are charged and what happens after those days.",
+              },
+              {
+                item: "Doctor and outpatient services",
+                original:
+                  "In 2026, the Part B deductible is $283. After that, the person usually pays 20% of the Medicare-approved amount for many covered services.",
+                advantage:
+                  "A plan may use copays, such as a primary care copay, specialist copay, lab copay, outpatient surgery copay, or coinsurance.",
+              },
+              {
+                item: "Maximum out-of-pocket limit",
+                original:
+                  "Original Medicare does not have a yearly out-of-pocket maximum unless the person has other coverage, such as Medigap, Medicaid, or employer/retiree coverage.",
+                advantage:
+                  "Medicare Advantage plans have a yearly maximum out-of-pocket limit for covered Part A and Part B services. The exact limit varies by plan.",
+              },
+              {
+                item: "Doctors, hospitals, and prior authorization",
+                original:
+                  "Original Medicare is widely accepted by providers who take Medicare. Some services may still have coverage rules.",
+                advantage:
+                  "A plan may have networks, referrals, prior authorization, and different rules for out-of-network care.",
+              },
+              {
+                item: "Extra advertised benefits",
+                original:
+                  "Original Medicare does not usually include routine dental, vision, hearing, grocery cards, flex cards, or transportation benefits.",
+                advantage:
+                  "A plan may include extras such as dental, vision, hearing, OTC, transportation, grocery, or flex-card benefits, but these can have limits and rules.",
+              },
+            ].map((row) => (
+              <div
+                key={row.item}
+                className="grid border-t border-[#d6e3ee] bg-white md:grid-cols-3"
+              >
+                <div className="bg-[#eef7ff] p-5">
+                  <p className="font-bold text-[#16324f]">{row.item}</p>
+                </div>
+
+                <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
+                  <p className="text-sm leading-6 text-[#526b80]">{row.original}</p>
+                </div>
+
+                <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
+                  <p className="text-sm leading-6 text-[#526b80]">{row.advantage}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="border-t border-[#d6e3ee] p-5 md:border-l md:border-t-0">
-            <p className="text-sm leading-6 text-[#526b80]">{row.advantage}</p>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-6">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                The takeaway
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                A lower premium does not automatically mean lower total cost.
+              </h3>
+
+              <p className="mt-3 leading-7 text-[#526b80]">
+                The real question is what the person may pay when they actually need care:
+                hospital stays, specialists, outpatient procedures, prescriptions, ambulance
+                services, and out-of-network care.
+              </p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-6">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+                Important reminder
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#881337]">
+                Medicare Advantage costs are plan-specific.
+              </h3>
+
+              <p className="mt-3 leading-7 text-[#7f1d1d]">
+                The Medicare Advantage column above is only an example of what to look for.
+                Seniors should review the exact plan’s Evidence of Coverage, Summary of
+                Benefits, provider directory, drug formulary, and maximum out-of-pocket cost.
+              </p>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    <div className="mt-8 grid gap-6 md:grid-cols-2">
-      <div className="rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-6">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
-          The takeaway
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
-          A lower premium does not automatically mean lower total cost.
-        </h3>
-
-        <p className="mt-3 leading-7 text-[#526b80]">
-          The real question is what the person may pay when they actually need care:
-          hospital stays, specialists, outpatient procedures, prescriptions, ambulance
-          services, and out-of-network care.
-        </p>
-      </div>
-
-      <div className="rounded-[1.5rem] border border-[#fecdd3] bg-[#fff1f2] p-6">
-        <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
-          Important reminder
-        </p>
-
-        <h3 className="mt-3 text-2xl font-bold text-[#881337]">
-          Medicare Advantage costs are plan-specific.
-        </h3>
-
-        <p className="mt-3 leading-7 text-[#7f1d1d]">
-          The Medicare Advantage column above is only an example of what to look for.
-          Seniors should review the exact plan’s Evidence of Coverage, Summary of
-          Benefits, provider directory, drug formulary, and maximum out-of-pocket cost.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Questions */}
       <section id="questions" className="mx-auto max-w-7xl px-6 py-20">
