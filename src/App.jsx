@@ -229,7 +229,7 @@ function Home() {
               </p>
 
               <a
-                href="https://buy.stripe.com/7sY3co4gqg7oeUFfxV2cg07"
+                href="https://buy.stripe.com/eVq9AMdR04oG3bX99x2cg08"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex rounded-full bg-[#2563eb] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition hover:bg-[#1d4ed8]"
