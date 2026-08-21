@@ -65,6 +65,10 @@ function Home() {
             Why It Matters
           </a>
 
+          <a href="#advertising-warnings" className="hover:text-[#16324f]">
+            Ad Warnings
+          </a>
+
           <a href="#before-switching" className="hover:text-[#16324f]">
             Before Switching
           </a>
@@ -293,6 +297,191 @@ function Home() {
             coverage because a commercial made a serious healthcare decision sound like
             free money.
           </p>
+        </div>
+      </section>
+
+      {/* Advertising Warnings */}
+      <section id="advertising-warnings" className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#0f766e]">
+              What the commercial may leave out
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#16324f]">
+              Official-sounding words and emotional scenes can make private insurance look like a government benefit.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-[#526b80]">
+              Some commercials shown to older adults are not advertising Medicare at all.
+              They may be selling private life insurance while using words such as
+              “state-approved benefit,” urgent weekly deadlines, or cheerful scenes of
+              families receiving money after someone dies. Slow down and identify exactly
+              what is being sold before calling or sharing personal information.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-[#fde68a] bg-[#fffbeb] p-7 shadow-xl shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
+                “State-approved benefit — call by Friday”
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#78350f]">
+                State approval is not the same as a state-funded benefit.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#78350f]">
+                A private insurance policy may be regulated or approved for sale by a
+                state. That does not mean the state is giving residents money, recommending
+                the policy, or paying for the coverage.
+              </p>
+
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-[#78350f]">
+                <li>• A deadline that returns every Friday may be a sales-pressure tactic.</li>
+                <li>• The advertised “benefit” may require monthly life-insurance premiums.</li>
+                <li>• The telephone number may lead to a marketing center rather than a government agency.</li>
+                <li>• Ask for the legal name of the agency, insurer, policy, premiums, exclusions, and waiting period.</li>
+              </ul>
+
+              <div className="mt-6 rounded-2xl border border-[#fde68a] bg-white p-5">
+                <p className="text-sm font-bold text-[#78350f]">Ask this directly:</p>
+                <p className="mt-2 text-sm leading-6 text-[#78350f]">
+                  “Is this money provided by the government, or are you selling me an insurance policy?”
+                </p>
+              </div>
+            </article>
+
+            <article className="rounded-[2rem] border border-[#fecdd3] bg-[#fff1f2] p-7 shadow-xl shadow-[#16324f]/5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+                “$25,000 right here!”
+              </p>
+
+              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#881337]">
+                A life-insurance payment is not a prize.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#7f1d1d]">
+                Some commercials show beneficiaries celebrating a large check after a
+                loved one dies. That presentation can make the payment look like easy or
+                free money while minimizing the loss, the premiums paid, and the policy’s
+                restrictions.
+              </p>
+
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-[#7f1d1d]">
+                <li>• The death benefit is generally paid only after the insured person dies.</li>
+                <li>• The insured person may have paid premiums for years.</li>
+                <li>• Some policies limit benefits during an initial waiting period.</li>
+                <li>• The advertised amount may not be available to every applicant.</li>
+                <li>• Families may need the proceeds for funeral costs, debts, or immediate expenses.</li>
+              </ul>
+
+              <div className="mt-6 rounded-2xl border border-[#fecdd3] bg-white p-5">
+                <p className="text-sm font-bold text-[#881337]">Remember:</p>
+                <p className="mt-2 text-sm leading-6 text-[#7f1d1d]">
+                  A death benefit is a contractual payment following someone’s death—not
+                  a cash giveaway, prize, or automatic senior benefit.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#9f1239] bg-[#881337] text-white shadow-2xl shadow-[#881337]/15">
+            <div className="px-7 py-8 text-center md:px-10 md:py-10">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#fecdd3]">
+                The central truth
+              </p>
+
+              <h3 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+                Life insurance is not a prize.
+              </h3>
+
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[#ffe4e6]">
+                The payment exists because someone died. It is a contractual death
+                benefit—not free money, a government giveaway, or a contest reward.
+              </p>
+            </div>
+
+            <div className="grid border-t border-white/20 bg-white text-[#1f2937] md:grid-cols-2">
+              <div className="bg-[#fff1f2] p-7 md:p-8">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#9f1239]">
+                  What the commercial shows
+                </p>
+
+                <ul className="mt-5 space-y-4 leading-7 text-[#7f1d1d]">
+                  <li>• Someone excitedly holding a $25,000 check</li>
+                  <li>• A beneficiary shouting, “Money right here!”</li>
+                  <li>• Smiling people treating the payment like a windfall</li>
+                  <li>• A large benefit amount filling the screen</li>
+                  <li>• A fast and uncomplicated approval story</li>
+                </ul>
+              </div>
+
+              <div className="border-t border-[#fecdd3] bg-white p-7 md:border-l md:border-t-0 md:p-8">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                  What it actually means
+                </p>
+
+                <ul className="mt-5 space-y-4 leading-7 text-[#35556f]">
+                  <li>• A loved one has died</li>
+                  <li>• A claim under a private insurance contract was approved</li>
+                  <li>• The insured person may have paid premiums for years</li>
+                  <li>• The family may need the proceeds for funeral costs and debts</li>
+                  <li>• Waiting periods, exclusions, and reduced early benefits may apply</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="rounded-[1.5rem] border border-[#d6e3ee] bg-[#f8fbff] p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0f766e]">
+                Do not judge the policy by the check
+              </p>
+
+              <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+                Judge it by what the policy promises and what it costs.
+              </h3>
+
+              <p className="mt-4 leading-7 text-[#526b80]">
+                The check displayed in a commercial does not tell viewers what the insured
+                paid, whether premiums can increase, how long coverage must be in force, or
+                what happens if the insured dies during an initial waiting period.
+              </p>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[#fde68a] bg-[#fffbeb] p-7">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
+                Questions to ask before buying
+              </p>
+
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-[#78350f]">
+                <li>• What is the exact monthly premium, and can it increase?</li>
+                <li>• What is the exact death benefit for this applicant?</li>
+                <li>• Is there a graded benefit or waiting period?</li>
+                <li>• If the insured dies during the first two years, exactly what will the beneficiary receive?</li>
+                <li>• What exclusions or circumstances could reduce or prevent payment?</li>
+                <li>• How much could be paid in total premiums if the policy is kept for 5, 10, or 20 years?</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-[1.5rem] border border-[#bfdbfe] bg-[#eef7ff] p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1d4ed8]">
+              Keep the categories separate
+            </p>
+
+            <h3 className="mt-3 text-2xl font-bold text-[#16324f]">
+              Life insurance is not Medicare.
+            </h3>
+
+            <p className="mt-3 max-w-4xl leading-7 text-[#526b80]">
+              A commercial aimed at seniors may appear during the same programs as Medicare
+              advertisements and may use similar words such as “benefit” or “approved.” That
+              does not make the offer part of Medicare, Medicaid, Social Security, or another
+              government program.
+            </p>
+          </div>
         </div>
       </section>
 
