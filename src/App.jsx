@@ -387,6 +387,23 @@ function Home() {
             </p>
           </div>
 
+          <figure className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-[2rem] border border-[#d6e3ee] bg-[#16324f] shadow-2xl shadow-[#16324f]/15">
+            <img
+              src="/life-insurance-not-a-prize.png"
+              alt="A split-screen comparison showing an exaggerated television commercial celebrating a $25,000 life-insurance approval beside the reality of a life-insurance policy, funeral expenses, and bills. The message says life insurance is protection, not a prize."
+              width="1254"
+              height="1254"
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full"
+            />
+
+            <figcaption className="px-6 py-4 text-center text-sm leading-6 text-[#cfe0ee]">
+              A death benefit is financial protection following a loss—not an award,
+              honor, government giveaway, or prize.
+            </figcaption>
+          </figure>
+
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <article className="rounded-[2rem] border border-[#fde68a] bg-[#fffbeb] p-7 shadow-xl shadow-[#16324f]/5">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#92400e]">
