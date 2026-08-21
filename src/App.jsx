@@ -4,6 +4,9 @@ import SeniorGiveBackAllowance from "./pages/SeniorGiveBackAllowance.jsx";
 import OriginalMedicareVsMedicareAdvantage from "./pages/OriginalMedicareVsMedicareAdvantage.jsx";
 import HelpfulExtrasVsRealTradeoffs from "./pages/HelpfulExtrasVsRealTradeoffs.jsx";
 import RetireeBenefitsWarning from "./pages/RetireeBenefitsWarning.jsx";
+import AlreadySharedInformation from "./pages/AlreadySharedInformation.jsx";
+import ReportInsuranceConcern from "./pages/ReportInsuranceConcern.jsx";
+import PhoneSafetyCard from "./pages/PhoneSafetyCard.jsx";
 
 const questions = [
   "Are my doctors, specialists, hospitals, and medications covered?",
@@ -37,6 +40,27 @@ const topics = [
   },
 ];
 
+const safetyTools = [
+  {
+    title: "I already gave them my information",
+    text: "Use a calm step-by-step guide based on what was shared, including a Medicare number, Social Security number, bank details, or a password.",
+    href: "/already-shared-information",
+    linkText: "See what to do now",
+  },
+  {
+    title: "Where should I report this?",
+    text: "Find the appropriate official destination for a suspicious Medicare contact, deceptive insurance advertisement, or government impersonation.",
+    href: "/report-an-insurance-concern",
+    linkText: "Find the right reporting option",
+  },
+  {
+    title: "Put this by the phone",
+    text: "Print a large-type safety card with a simple pause-and-verify script, trusted numbers, and space for a family contact.",
+    href: "/phone-safety-card",
+    linkText: "Open the printable card",
+  },
+];
+
 function Home() {
   return (
     <main className="min-h-screen bg-[#f5f9fc] text-[#1f2937]">
@@ -60,6 +84,10 @@ function Home() {
           <Link to="/check-before-you-switch" className="hover:text-[#16324f]">
             Check Before You Switch
           </Link>
+
+          <a href="#safety-help" className="hover:text-[#16324f]">
+            Get Help Now
+          </a>
 
           <a href="#why" className="hover:text-[#16324f]">
             Why It Matters
@@ -155,6 +183,44 @@ function Home() {
               provider networks, plan rules, prior authorization, and different costs.
               Always compare the full plan — not just the advertised allowance.
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Immediate Safety Help */}
+      <section id="safety-help" className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="rounded-[2rem] border border-[#fecdd3] bg-[#fff1f2] p-8 shadow-xl shadow-[#881337]/5 md:p-10">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#9f1239]">
+              Get help now
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#881337]">
+              If something already happened, start here without embarrassment or blame.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-[#7f1d1d]">
+              Deceptive advertising and high-pressure calls are designed to create confusion.
+              These tools help seniors, families, and caregivers take the next safe step.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {safetyTools.map((tool) => (
+              <article
+                key={tool.title}
+                className="rounded-[1.5rem] border border-[#fecdd3] bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-2xl font-bold text-[#16324f]">{tool.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-[#526b80]">{tool.text}</p>
+                <Link
+                  to={tool.href}
+                  className="mt-6 inline-flex text-sm font-semibold text-[#2563eb] hover:underline"
+                >
+                  {tool.linkText} →
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -1223,6 +1289,15 @@ export default function App() {
         path="/retiree-benefits-warning"
         element={<RetireeBenefitsWarning />}
       />
+      <Route
+        path="/already-shared-information"
+        element={<AlreadySharedInformation />}
+      />
+      <Route
+        path="/report-an-insurance-concern"
+        element={<ReportInsuranceConcern />}
+      />
+      <Route path="/phone-safety-card" element={<PhoneSafetyCard />} />
     </Routes>
   );
 }

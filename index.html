@@ -1,134 +1,203 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
-    <!-- Basic setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Site identity -->
-    <title>
-      Medicare Before You Switch | Check Medicare Ads, Flex Cards, Give-Back Allowances & Plan Tradeoffs
-    </title>
+    <title>Medicare Before You Switch | Check Ads, Benefits & Plan Tradeoffs</title>
 
     <meta
       name="description"
-      content="Plain-language Medicare education for seniors and families. Check Medicare ads, phone calls, mailers, flex cards, grocery cards, give-back allowances, dental benefits, and Medicare Advantage plan tradeoffs before changing coverage."
+      content="Independent Medicare and insurance-advertising education for seniors and families. Check suspicious ads, flex cards, give-back allowances, government-like marketing, plan tradeoffs, and what to do after sharing personal information."
     />
 
-    <meta name="author" content="Stabile USA" />
+    <meta name="author" content="Pamela J. Terrell" />
     <meta name="publisher" content="Stabile USA" />
+    <meta name="application-name" content="Medicare Before You Switch" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://medicarebeforeyouswitch.com/" />
 
-    <!-- Theme color for mobile browsers -->
+    <!-- Site icons -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Browser appearance -->
     <meta name="theme-color" content="#16324f" />
+    <meta name="color-scheme" content="light" />
 
-    <!-- Search engine guidance -->
-    <meta
-      name="keywords"
-      content="Medicare, Medicare Advantage, Original Medicare, Medigap, Medicare Part A, Medicare Part B, Medicare Part C, Medicare Part D, Senior Give Back Allowance, Medicare give back, Medicare flex card, Medicare grocery card, Medicare spending card, Medicare allowance, Medicare commercials, Medicare ads, Medicare phone calls, Medicare mailers, retiree benefits, prior authorization, Medicare networks, Medicare plan tradeoffs"
-    />
-
-    <meta name="robots" content="index, follow" />
-
-    <!-- Important disclaimer for search/context -->
-    <meta
-      name="disclaimer"
-      content="MedicareBeforeYouSwitch.com is an independent educational resource published by Stabile USA. It is not affiliated with Medicare, CMS, HHS, or any government agency. This site does not sell Medicare plans and does not provide legal, financial, medical, or personal insurance advice."
-    />
-
-    <!-- Open Graph / Facebook / LinkedIn -->
+    <!-- Open Graph: Facebook and LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Medicare Before You Switch" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://medicarebeforeyouswitch.com/" />
+
     <meta
       property="og:title"
-      content="Medicare Before You Switch | Check Medicare Ads Before Changing Coverage"
+      content="Medicare Before You Switch | Understand the Full Decision"
     />
+
     <meta
       property="og:description"
-      content="Before responding to Medicare commercials, phone calls, mailers, flex cards, grocery cards, give-back allowances, or Medicare Advantage offers, learn what seniors and families should check first."
+      content="Help for seniors and families evaluating Medicare and insurance ads, government-like sales tactics, plan tradeoffs, suspicious calls, and what to do after sharing personal information."
     />
-    <meta property="og:url" content="https://medicarebeforeyouswitch.com/" />
-    <meta property="og:image" content="https://medicarebeforeyouswitch.com/favicon.png" />
-    <meta property="og:image:alt" content="Medicare Before You Switch shield icon" />
-    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter / X -->
+    <meta
+      property="og:image"
+      content="https://medicarebeforeyouswitch.com/favicon.png"
+    />
+
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Medicare Before You Switch shield logo"
+    />
+
+    <!-- X / Twitter -->
     <meta name="twitter:card" content="summary" />
+
     <meta
       name="twitter:title"
-      content="Medicare Before You Switch | Check Medicare Ads Before Changing Coverage"
+      content="Medicare Before You Switch | Understand the Full Decision"
     />
+
     <meta
       name="twitter:description"
-      content="Plain-language Medicare education for seniors and families before changing coverage because of a commercial, phone call, allowance, flex card, grocery card, or advertised Medicare benefit."
+      content="Independent education to help seniors and families evaluate Medicare and insurance advertisements, suspicious calls, benefits, costs, and coverage tradeoffs."
     />
-    <meta name="twitter:image" content="https://medicarebeforeyouswitch.com/favicon.png" />
+
+    <meta
+      name="twitter:image"
+      content="https://medicarebeforeyouswitch.com/favicon.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Medicare Before You Switch shield logo"
+    />
 
     <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Medicare Before You Switch",
-        "url": "https://medicarebeforeyouswitch.com/",
-        "logo": "https://medicarebeforeyouswitch.com/favicon.png",
-        "description": "Medicare Before You Switch is an independent educational resource published by Stabile USA to help seniors and families understand Medicare ads, Medicare Advantage tradeoffs, give-back allowances, flex cards, grocery cards, networks, prior authorization, and retiree benefit concerns before changing coverage.",
-        "founder": {
-          "@type": "Person",
-          "name": "Pamela J. Terrell"
-        },
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "Stabile USA"
-        },
-        "sameAs": [
-          "https://medicarebeforeyouswitch.com/"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://medicarebeforeyouswitch.com/#publisher",
+            "name": "Stabile USA",
+            "url": "https://stabileusa.com/",
+            "founder": {
+              "@type": "Person",
+              "name": "Pamela J. Terrell"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://medicarebeforeyouswitch.com/#website",
+            "url": "https://medicarebeforeyouswitch.com/",
+            "name": "Medicare Before You Switch",
+            "description": "An independent, plain-language educational resource helping seniors, families, and caregivers evaluate Medicare choices, insurance advertisements, suspicious solicitations, government-like marketing, and coverage tradeoffs before acting.",
+            "publisher": {
+              "@id": "https://medicarebeforeyouswitch.com/#publisher"
+            },
+            "creator": {
+              "@type": "Person",
+              "name": "Pamela J. Terrell"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://medicarebeforeyouswitch.com/#webpage",
+            "url": "https://medicarebeforeyouswitch.com/",
+            "name": "Medicare Before You Switch | Check Ads, Benefits & Plan Tradeoffs",
+            "description": "Independent Medicare and insurance-advertising education for seniors and families, including help evaluating suspicious ads, flex cards, give-back allowances, government-like marketing, plan tradeoffs, and information-sharing concerns.",
+            "isPartOf": {
+              "@id": "https://medicarebeforeyouswitch.com/#website"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Medicare education"
+              },
+              {
+                "@type": "Thing",
+                "name": "Insurance advertising awareness"
+              },
+              {
+                "@type": "Thing",
+                "name": "Consumer protection for older adults"
+              }
+            ],
+            "inLanguage": "en-US"
+          }
         ]
       }
     </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Medicare Before You Switch",
-        "url": "https://medicarebeforeyouswitch.com/",
-        "description": "Plain-language Medicare education for seniors and families before changing coverage because of a Medicare commercial, phone call, mailer, flex card, grocery card, give-back allowance, or Medicare Advantage advertisement.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Stabile USA"
-        },
-        "inLanguage": "en-US"
+    <!-- Google Analytics -->
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2SKXZF47WJ"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
       }
+
+      gtag("js", new Date());
+      gtag("config", "G-2SKXZF47WJ");
     </script>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2SKXZF47WJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2SKXZF47WJ');
-</script>
-
-
   </head>
 
   <body>
     <div id="root"></div>
 
     <noscript>
-      <div style="padding: 1rem; font-family: Arial, sans-serif; line-height: 1.5;">
-        Medicare Before You Switch requires JavaScript to use the interactive review tool.
-        This site is an independent educational resource published by Stabile USA and is not
-        affiliated with Medicare, CMS, HHS, or any government agency.
+      <div
+        style="
+          max-width: 48rem;
+          margin: 2rem auto;
+          padding: 1.5rem;
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          color: #16324f;
+          background: #eef7ff;
+          border: 1px solid #d6e3ee;
+          border-radius: 1rem;
+        "
+      >
+        <strong>
+          JavaScript is required for the interactive review tools.
+        </strong>
+
+        <p>
+          Medicare Before You Switch is an independent educational resource
+          published by Stabile USA. It is not affiliated with Medicare, CMS,
+          HHS, Social Security, or any government agency.
+        </p>
+
+        <p>
+          For official Medicare help, visit
+          <a href="https://www.medicare.gov/">Medicare.gov</a>
+          or call 1-800-MEDICARE (1-800-633-4227).
+        </p>
       </div>
     </noscript>
 
